@@ -1,3 +1,7 @@
+<!-- <?php
+session_start();
+?> -->
+
 <nav class="bg-gray-800">
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
@@ -70,7 +74,11 @@
         <!-- Profile dropdown -->
         <div class="relative ml-3">
           <div>
-              <a href="/login" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" href=''>Login</a>
+            <?php if (isset($_SESSION['email']) && isset($_SESSION['password'])) : ?>
+              <a href="/logout" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" href=''>Logout</a>
+              <?php else :?>
+                <a href="/login" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" href=''>Login</a>
+            <?php endif;?>
           </div>
 
           <!--
