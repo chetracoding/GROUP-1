@@ -285,6 +285,6 @@
     </div>
   </div>
 </footer>
-
+<script src="views/searchdate/js/searchdate.js"></script>
 </body>
 </html>
