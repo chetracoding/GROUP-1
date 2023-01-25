@@ -12,8 +12,8 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
-          <div class="detail">
-            <div class="detail-img">
+          <div class="">
+            <div class=" mb-10">
               <img src="<?= $details['image'] ?>" alt="Two each of gray, white, and black shirts arranged on table." class="object-cover object-center w-full h-full">
             </div>
             <div class="sm:col-span-8 lg:col-span-7">
