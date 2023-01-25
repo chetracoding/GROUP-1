@@ -10,5 +10,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 if (empty($shows)) {
     require "views/errors/403.php";
 } else {
-    require "views/search/search.view.php";
+    require "views/home/home.view.php";
 }

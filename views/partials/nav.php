@@ -49,7 +49,6 @@ session_start();
           </div>
         </div>
       </div>
-
       <form action="/search" class="flex items-center" method="post">   
         <label for="simple-search" class="sr-only">Search</label>
         <div class="relative w-full">
@@ -59,7 +58,6 @@ session_start();
           <input type="text" id="simple-search" name="search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="Search..." value="<?= isset($text)? $text : "" ?>">
         </div>
       </form>
-
       <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
         <button type="button" class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
           <span class="sr-only">View notifications</span>
