@@ -12,14 +12,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors['password'] = "Please enter password.";
     }
 
-    if (empty($errors)) {   
-        if (getDataUser($_POST['email'], $_POST['password'])) {
-            $_SESSION['email'] = $_POST['email'];
-            $_SESSION['password'] = $_POST['password'];
-    
-            header('location: /');
+    if (empty($errors)) {
+        if (getEmail($_POST['email'])) {
+            $encrypt = getPasswordByEmail($_POST['email'])['password'];
+            if (password_verify($_POST['password'], $encrypt)) {
+                $_SESSION['email'] = $_POST['email'];
+                header('location: /');
+            }
+            else {
+                $errors['incorrect-password'] = "Incorrect password.";
+            }
         } else {
-            $errors['incorrect'] = "Incorrect password.";
+            $errors['incorrect-email'] = "Incorrect email.";
         }
     }
 }

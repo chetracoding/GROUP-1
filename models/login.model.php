@@ -1,13 +1,23 @@
 <?php
-
-function getDataUser($email, $password) : bool
+function getEmail($email) : bool
 {
     global $connection;
-    $statement = $connection->prepare("select * from users where email=:email and password=:password;");
+    $statement = $connection->prepare("select * from users where email=:email;");
     $statement->execute([
-        ':email'=> $email,
-        ':password'=> $password
+        ':email'=> $email
     ]);
 
     return $statement->rowCount() > 0;
+}
+
+
+function getPasswordByEmail($email) : array
+{
+    global $connection;
+    $statement = $connection->prepare("select password from users where email=:email;");
+    $statement->execute([
+        ':email'=> $email,
+    ]);
+
+    return $statement->fetch();
 }
