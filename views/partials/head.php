@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="views/css/style.css">
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Group 1</title>
 </head>
 <body>

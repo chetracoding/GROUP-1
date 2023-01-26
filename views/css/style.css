@@ -1,6 +1,20 @@
+body{
+    background:rgb(231, 228, 228);
+    font-family: sans-serif;
+}
 #card-shows{
     background:rgb(216, 215, 215);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#card-shows img{
+    width: 100%;
+    height: 30vh;
+}
+#item-show{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    height: 30vh;
 }
 #card-shows:hover{
     transform: scale(1.05);
@@ -8,4 +22,39 @@
     transition: 0.5s ;
     border: 2px solid green;
     
+}
+h1,p{
+    color: white;
+}
+video{
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+#container {
+    height: 55vh;
+    display: flex;
+    align-items: center;
+}
+
+#container .stars{
+   color: orange;
+}
+#btn-orange{
+    background:orange;
+}
+.text {
+    margin-left: 5%;
+    width:30%;
+    font-size: 1.2rem;
+}
+.text > h1 {
+    font-size: 2rem;
+}
+.list{
+    background:orange;
+    text-align: center;
+}
+.list h1{
+    font-size: 2rem;
 }
