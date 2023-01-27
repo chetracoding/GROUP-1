@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $encrypt = getPasswordByEmail($_POST['email'])['password'];
             if (password_verify($_POST['password'], $encrypt)) {
                 $_SESSION['email'] = $_POST['email'];
+                $_SESSION['first-name'] = getFirstNameByEmail($_POST['email'])['first_name'];
                 header('location: /');
             }
             else {

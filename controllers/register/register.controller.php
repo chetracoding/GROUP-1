@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         createUser($_POST['first-name'], $_POST['last-name'], $_POST['email'], $encryptPass);
         $_SESSION["email"] = $_POST["email"];
+        $_SESSION['first-name'] = $_POST['first-name'];
         header('Location: /');
     }
 }
