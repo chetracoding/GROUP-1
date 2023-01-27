@@ -12,6 +12,7 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script defer src="views/partials/js/nav.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="views/css/style.css">
     <title>CAMBO SHOW</title>
 </head>
 <body>
