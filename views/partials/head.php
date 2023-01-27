@@ -10,7 +10,8 @@
     <script type="text/javascript" src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <title>CAMBO SHOW</title>
     <script defer src="views/partials/js/nav.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>CAMBO SHOW</title>
 </head>
 <body>
