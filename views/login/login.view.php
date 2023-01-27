@@ -1,13 +1,13 @@
 <?php require"views/partials/head.php" ?>
 <?php require"views/partials/nav.php" ?>
 
-<section class="">
-    <div class="flex items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-        <div class="w-full rounded-lg  md:mt-0 sm:max-w-md xl:p-0">
-            <img src="https://o.remove.bg/downloads/0f7341d8-6bae-4f29-8428-d89b62fd051f/fcebdf9e34ad5d5f1d8f728f781a00ac-removebg-preview.png" alt=""><br>
+<main class=".main-login my-10 mx-20 flex justify-center">
+    <div class="w-10/12 flex bg-gray-800">
+        <div class="w-3/6 flex justify-center items-center">
+            <img class="w-3/5" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Clap_cinema.svg/564px-Clap_cinema.svg.png?20220913221442" alt="">
         </div>
-        <div class="w-full rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
-            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+        <div class="bg-white w-3/6 ">
+            <div class="p-8 space-y-6 md:space-y-10 sm:p-8">
                 <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
                     Login in to your account
                 </h1>
@@ -35,6 +35,6 @@
             </div>
         </div>
     </div>
-</section>
+</main>
 
 <?php require"views/partials/footer.php" ?>
