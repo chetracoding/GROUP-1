@@ -11,3 +11,15 @@
     transition: 0.5s ;
     border: 2px solid green;
 }
+
+#form-date{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+#form-date label{
+    margin: 15px;
+}
+#main {
+    margin-top: -37%;
+}
