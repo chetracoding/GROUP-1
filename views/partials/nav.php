@@ -24,12 +24,11 @@ session_start();
         </div>
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
-            <a href="/" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
-            <a href="shows" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Tickets</a>
-            <a href="about" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
-            <a href="contact" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
-            
-            <a href="/searchdate" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Event</a>
+            <a href="/" class="<?= urlIs('/') ? 'bg-gray-900' : '' ?> text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
+            <a href="/tickets" class="<?= urlIs('/tickets') ? 'bg-gray-900' : '' ?> text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Tickets</a>
+            <a href="/searchdate" class="<?= urlIs('/searchdate') ? 'bg-gray-900' : '' ?> text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Events</a>
+            <a href="/about" class="<?= urlIs('/about') ? 'bg-gray-900' : '' ?> text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+            <a href="/contact" class="<?= urlIs('/contact') ? 'bg-gray-900' : '' ?> text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
           </div>
         </div>
       </div>
