@@ -1,16 +1,11 @@
 <?php require"views/partials/head.php" ?>
 <?php require"views/partials/nav.php" ?>
 
-<section class="bg-gray-50 ">
+<section class="">
     <div class="flex items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-
         <div class="w-full rounded-lg  md:mt-0 sm:max-w-md xl:p-0">
-            <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
-                Welcome to Consert Ticket
-            </h1><br><br>
-            <img src="https://app.dfavo.com/assets/login/images/login-image.svg" alt=""><br>
+            <img src="https://o.remove.bg/downloads/0f7341d8-6bae-4f29-8428-d89b62fd051f/fcebdf9e34ad5d5f1d8f728f781a00ac-removebg-preview.png" alt=""><br>
         </div>
-        
         <div class="w-full rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                 <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
@@ -39,7 +34,6 @@
                 </form>
             </div>
         </div>
-
     </div>
 </section>
 
