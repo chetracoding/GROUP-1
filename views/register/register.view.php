@@ -2,7 +2,7 @@
 <?php require "views/partials/nav.php" ?>
 <main class="main-register my-20 flex mx-20 bg-slate-900">
     <div class="w-6/12 flex flex-col items-center justify-center px-6 py-8 xl:p-5 ">
-        <img src="https://www.transparentpng.com/thumb/movie/movie-nights-png-hd-2Ed6nB.png" alt="">
+        <img src="assets/register.png" alt="">
     </div>
     <div class="bg-white w-6/12">
         <div class="w-full flex flex-col items-center justify-center px-8 py-8 shadow">

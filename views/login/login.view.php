@@ -1,13 +1,13 @@
 <?php require"views/partials/head.php" ?>
 <?php require"views/partials/nav.php" ?>
 
-<main class=".main-login my-10 mx-20 flex justify-center">
-    <div class="w-10/12 flex bg-gray-800">
+<main class="my-20 flex justify-center">
+    <div class="login-contanier w-10/12 flex bg-gray-800">
         <div class="w-3/6 flex justify-center items-center">
-            <img class="w-3/5" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Clap_cinema.svg/564px-Clap_cinema.svg.png?20220913221442" alt="">
+            <img class="w-3/5" src="assets/login.png" alt="">
         </div>
-        <div class="bg-white w-3/6 ">
-            <div class="p-8 space-y-6 md:space-y-10 sm:p-8">
+        <div class="bg-white w-3/6">
+            <div class="p-8 space-y-6 md:space-y-10 sm:p-15 mx-14">
                 <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
                     Login in to your account
                 </h1>
