@@ -1,6 +1,6 @@
 <?php require "views/partials/head.php" ?>
 <?php require "views/partials/nav.php" ?>
-
+<div class=" p-3 text-center border bg-orange-400 text-2xl font-bold text-gray-900 sm:pr-12"><h1 class="text-white">SHOW DETAIL</h1></div>
 <script src = "https://cdn.tailwindcss.com"></script>
 <div class="relative z-10 " role="dialog" aria-modal="true">
     <div class="flex min-h-full items-stretch justify-center text-center md:items-center md:px-2 lg:px-4">
@@ -12,7 +12,7 @@
             </div>
             <div class="sm:col-span-8 lg:col-span-7" id="text-details">
               <h1 class="text-2xl font-bold text-gray-900 sm:pr-12"><?= $details['name']?></h1>
-              <section aria-labelledby="options-heading" class="mt-10">
+              <section aria-labelledby="options-heading" class="mt-5">
                 <h3 id="options-heading" class="sr-only">Price Detail</h3>
                 <form class = "space-y-2 ">
                     <div>
@@ -25,7 +25,13 @@
                         </ul>
                     </div>
                     <div>
-                        <p class="font-bold  text-gray-900 sm:pr-12">Date Time</p>
+                      <p class="font-bold  text-gray-900 sm:pr-12">Number total tickets</p>
+                      <p></p>
+                      <p class="font-bold  text-gray-900 sm:pr-12">Number ticket left</p>
+                      <p></p>
+                      <p class="font-bold  text-gray-900 sm:pr-12">Time of show</p>
+                      <p></p>
+                        <p class="font-bold  text-gray-900 sm:pr-12">Date Time show</p>
                         <p><?= $details['date']?></p>
                     </div>
                     <div>
@@ -34,8 +40,8 @@
                     </div>
                     <div class = "flex space-x-4" id="btn">
                       
-                        <button type="submit" class="mt-6 flex w-50 items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"><a href="/">Go Back</a></button>
-                        <button type="submit" class="mt-6 flex w-50 items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Buy Ticket</button>
+                        <button type="submit" class="mt-6 flex w-50 items-center justify-center rounded-md border border-transparent bg-green-600 py-3 px-8 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"><a href="/">Go Back</a></button>
+                        <button type="submit" class="mt-6 flex w-50 items-center justify-center rounded-md border border-transparent bg-green-600 py-3 px-8 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Buy Ticket</button>
                     </div>
                 </form>
               </section>
