@@ -31,8 +31,8 @@
                         <p class="text-slate-200"><?= $details['details'] ?></p>
                     </div>
                     <div class = "flex space-x-4" id="btn">
-                        <button type="submit" class="mt-6 flex w-50 items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"><a href="/">Go Back</a></button>
-                        <button type="submit" class="mt-6 flex w-50 items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"><a href="/buy">Buy Ticket</a></button>
+                        <button type="submit" class="mt-6 flex w-50 items-center justify-center rounded-md border border-transparent bg-green-600 py-3 px-8 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"><a href="/">Go Back</a></button>
+                        <button type="submit" class="mt-6 flex w-50 items-center justify-center rounded-md border border-transparent bg-green-600 py-3 px-8 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"><a href="/buy">Buy Ticket</a></button>
                     </div>
                 </form>
               </section>
