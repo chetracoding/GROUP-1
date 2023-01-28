@@ -4,7 +4,6 @@ body{
 }
 #card-shows{
     background:rgb(216, 215, 215);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 #card-shows img{
     width: 100%;
@@ -16,45 +15,121 @@ body{
     justify-content: space-between;
     height: 30vh;
 }
-#card-shows:hover{
-    transform: scale(1.05);
-    z-index: 1;
-    transition: 0.5s ;
-    border: 2px solid green;
-    
+
+/* Banner Animation ================= */
+.slider{
+    height: 85vh;
+	position: relative;
+	width: 100%;
 }
-h1,p{
-    color: white;
-}
-video{
-    width: 100%;
-    position: absolute;
-    z-index: -1;
-}
-#container {
-    height: 55vh;
-    display: flex;
-    align-items: center;
+.myslide{
+	height: 100%;
+	display: none;
+	overflow: hidden;
 }
 
-#container .stars{
-   color: orange;
+.prev, .next{
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	font-size: 50px;
+	padding: 15px;
+	cursor: pointer;
+	color: #fff;
+	transition: 0.1s;
+	user-select: none;
 }
-#btn-orange{
-    background:orange;
+
+.next{
+	right: 0;
 }
-.text {
-    margin-left: 5%;
-    width:30%;
-    font-size: 1.2rem;
+.dotsbox{
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	bottom: 20px;
+	cursor: pointer;
 }
-.text > h1 {
-    font-size: 2rem;
+.dot{
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	border: 3px solid #fff;
+	border-radius: 50%;
+	margin: 0 10px;
+	cursor: pointer;
 }
-.list{
-    background:orange;
-    text-align: center;
+
+.active, .dot:hover{
+	border-color: #0f172a;
 }
-.list h1{
-    font-size: 2rem;
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: 0.8}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: 0.8}
+  to {opacity: 1}
+}
+
+.txt{
+	position: absolute;
+	color: #fff;
+	letter-spacing: 2px;
+	line-height: 35px;
+	top: 40%;
+	left: 15%;
+	-webkit-animation-name: posi;
+  	-webkit-animation-duration: 2s;
+  	animation-name: posi;
+  	animation-duration: 2s;
+	z-index: 1;
+}
+
+@-webkit-keyframes posi {
+  from {left: 25%;}
+  to {left: 15%;}
+}
+
+
+@keyframes posi {
+  from {left: 25%;}
+  to {left: 15%;}
+}
+
+.txt h1{
+	color: #00a7ff; /* blue */
+	font-size: 50px;
+	margin-bottom: 20px;
+}
+.txt p{
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.myslide > img{
+	transform: scale(1.1, 1.1);
+	-webkit-animation-name: zoomin;
+  	-webkit-animation-duration: 40s;
+  	animation-name: zoomin;
+  	animation-duration: 40s;
+}
+@-webkit-keyframes zoomin {
+  from {transform: scale(1, 1);}
+  to {transform: scale(1.2, 1.2);}
+}
+
+
+@keyframes zoomin {
+  from {transform: scale(1, 1);}
+  to {transform: scale(1.2, 1.2);}
 }
