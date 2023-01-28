@@ -39,7 +39,7 @@
 	</div>
 
   <div class="grid grid-cols-4 gap-8 m-20">
-      <?php foreach($shows as $show): ?>
+    <?php foreach($shows as $show): ?>
       <div id="card-shows" class="max-w-sm bg-gray-800 border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 ">
         <img class="" src= <?= $show['image']?> alt="" />
 
