@@ -16,10 +16,10 @@ function createUser(string $firstName, string $lastName, string $date, string $a
     return $statement->rowCount() > 0;
 }
 
-function getEmail(string $email) : bool
+function checkEmail(string $email) : bool
 {
     global $connection;
-    $statement = $connection->prepare("select email from users where email=:email");
+    $statement = $connection->prepare("select email from users where email=:email;");
     $statement->execute([
         ':email' => $email,
     ]);

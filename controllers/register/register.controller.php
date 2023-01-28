@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     empty($_POST['date'])? $errors['date'] = "Please select date." : "";
     empty($_POST['address'])? $errors['address'] = "Please select address." : "";
 
-    getEmail($_POST['email'])? $errors['email'] = "Your email is already created." : "";
+    checkEmail($_POST['email'])? $errors['email'] = "Your email is already created." : "";
     filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ? "": $errors['email'] = "Please enter a valide email.";
 
     strlen($_POST['password']) >= 8 ? "" : $errors['password'] = "Please enter more than 8 characters.";
