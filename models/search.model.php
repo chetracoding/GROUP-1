@@ -1,11 +1,12 @@
 <?php
 
-function getShowsByTitle(string $text) : array
+function getShowsByTitle(string $text, string $date) : array
 {
   global $connection;
-  $statement = $connection->prepare("select * from shows where name like :text limit 12;");
+  $statement = $connection->prepare("select * from shows where name like :text and date >= :date limit 12;");
   $statement->execute([
-    ':text' => "%$text%"
+    ':text' => "%$text%",
+    ':date' => $date
   ]);
   return $statement->fetchAll();
 }

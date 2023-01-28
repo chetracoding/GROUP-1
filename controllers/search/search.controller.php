@@ -1,14 +1,15 @@
 <?php
 require "models/search.model.php";
 
+$today = date("Y-m-d ");
 $shows = [];
-$text = $_POST['search'];
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $shows = getShowsByTitle($text);
+    $shows = getShowsByTitle($_POST['search'], $today);
 }
 
 if (empty($shows)) {
     require "views/errors/403.php";
 } else {
-    require "views/home/home.view.php";
+    require "views/search/search.view.php";
 }
