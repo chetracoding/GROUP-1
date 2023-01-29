@@ -4,8 +4,7 @@
 >
   <div class="relative block h-32 lg:col-span-2 lg:h-full">
     <img
-      src="https://freedesignfile.com/upload/2018/11/Cinema-object-background-vector-material-07.jpg"
-      alt=""
+      src="assets/footer.jpg"
       class="absolute inset-0 object-cover w-full h-full"
     />
   </div>

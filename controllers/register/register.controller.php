@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     checkEmail($_POST['email'])? $errors['email'] = "Your email is already created." : "";
     filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ? "": $errors['email'] = "Please enter a valide email.";
 
-    strlen($_POST['password']) >= 8 ? "" : $errors['password'] = "Please enter more than 8 characters.";
+    strlen($_POST['password']) >= 8 ? "" : $errors['password'] = "Please enter password at least 8 characters.";
     $_POST['password'] == $_POST['confirm-password'] ? "" : $errors['confirm-password'] = "Password not correct.";
 
     isset($_POST['terms'])? "" : $errors['terms'] = "Please check terms.";

@@ -13,23 +13,23 @@
                 <div class = "flex space-x-4 ">
                     <div>
                         <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">First Name</label>
-                        <input type="text" name="first-name" id="first-name" value="<?= isset($_POST['first-name'])? $_POST['first-name'] : ""?>" class="border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block p-2.5   dark:text-black" placeholder="first name">
+                        <input type="text" name="first-name" id="first-name" value="<?= isset($_POST['first-name'])? $_POST['first-name'] : ""?>" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5" placeholder="first name">
                         <span class="text-red-600"><?= isset($errors['first-name'])? $errors['first-name'] : ""; ?></span>
                     </div>
                     <div>
                         <label for="last-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Last Name</label>
-                        <input type="text" name="last-name" id="last-name" value="<?= isset($_POST['last-name'])? $_POST['last-name'] : ""?>" class="border border-green-400  text-gray-900 sm:text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5  dark:text-black " placeholder="last name">
+                        <input type="text" name="last-name" id="last-name" value="<?= isset($_POST['last-name'])? $_POST['last-name'] : ""?>" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5" placeholder="last name">
                         <span class="text-red-600"><?= isset($errors['last-name'])? $errors['last-name'] : ""; ?></span>
                     </div>
                 </div>
                 <div>
                     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Date of Birth</label>
-                    <input type="date" name="date" id="date" value="<?= isset($_POST['date'])? $_POST['date'] : ""?>" class="border border-green-400  text-gray-900 sm:text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 text-black " value="2018-07-22">
+                    <input type="date" name="date" id="date" value="<?= isset($_POST['date'])? $_POST['date'] : ""?>" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5" value="2018-07-22">
                     <span class="text-red-600"><?= isset($errors['date'])? $errors['date'] : ""; ?></span>              
                 </div>
                 <div>
                     <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Selecte Your City / Province</label>
-                    <select id="address" name="address" class=" border border-green-400  text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5  dark:text-black ">
+                    <select id="address" name="address" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5">
                         <option selected disabled>Choose</option>
                         <option value="Phnom Penh" >Phnom Penh</option>
                         <option value="Banteay Meanchey">Banteay Meanchey</option>
@@ -61,17 +61,17 @@
                 </div>
                 <div>
                     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Your email</label>
-                    <input type="email" name="email" id="email" value="<?= isset($_POST['email'])? $_POST['email'] : ""?>" class="border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:text-black " placeholder="Your email">
+                    <input type="email" name="email" id="email" value="<?= isset($_POST['email'])? $_POST['email'] : ""?>" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5" placeholder="Your email">
                     <span class="text-red-600"><?= isset($errors['email'])? $errors['email'] : ""; ?></span>              
                 </div>
                 <div>
                     <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-blac">Password</label>
-                    <input type="password" name="password" id="password" value="<?= isset($_POST['password'])? $_POST['password'] : ""?>" placeholder="••••••••" class="border border-green-400  text-gray-900 sm:text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:text-black">
+                    <input type="password" name="password" id="password" value="<?= isset($_POST['password'])? $_POST['password'] : ""?>" placeholder="••••••••" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5">
                     <span class="text-red-600"><?= isset($errors['password'])? $errors['password'] : ""; ?></span>
                 </div>
                 <div>
                     <label for="confirm-password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Confirm password</label>
-                    <input type="password" name="confirm-password" id="confirm-password" value="<?= isset($_POST['confirm-password'])? $_POST['confirm-password'] : ""?>" placeholder="••••••••" class=" border border-green-400  text-gray-900 sm:text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5  dark:text-black ">
+                    <input type="password" name="confirm-password" id="confirm-password" value="<?= isset($_POST['confirm-password'])? $_POST['confirm-password'] : ""?>" placeholder="••••••••" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5">
                     <span class="text-red-600"><?= isset($errors['confirm-password'])? $errors['confirm-password'] : ""; ?></span>   
                 </div>
                 <div class="flex items-start">
