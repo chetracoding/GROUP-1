@@ -6,6 +6,7 @@ function getShowId(int $id) : array
     $statement->execute([':id' => $id]);
     return $statement->fetch();
 }
+
 function checkShow(int $id) : bool
 {
     global $connection;
