@@ -1,6 +1,6 @@
 <footer
   aria-label="Site Footer"
-  class="bg-white dark:bg-gray-900 lg:grid lg:grid-cols-5"
+  class="bg-gray-900 lg:grid lg:grid-cols-5"
 >
   <div class="relative block h-32 lg:col-span-2 lg:h-full">
     <img

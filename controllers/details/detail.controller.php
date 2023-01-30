@@ -9,6 +9,7 @@ if (isset($_GET['id'])) {
       $details = getShowId($id );
     } else {
       require 'views/errors/404.php';
+      die();
     }
     
   }
