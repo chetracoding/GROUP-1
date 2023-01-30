@@ -5,13 +5,13 @@ require "models/login.model.php";
 $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (empty($_POST['email'])) {
-        $errors['email'] = "Please enter email.";
-    }
-    if (empty($_POST['password'])) {
-        $errors['password'] = "Please enter password.";
-    }
+    // Check email
+    empty($_POST['email'])? $errors['email'] = "Please enter email." : "";
 
+    // Check password
+    empty($_POST['password'])? $errors['password'] = "Please enter password." : "";
+
+    // Validate email and password
     if (empty($errors)) {
         if (getEmail($_POST['email'])) {
             $encrypt = getPasswordByEmail($_POST['email'])['password'];
