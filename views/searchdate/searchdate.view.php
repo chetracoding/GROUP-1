@@ -12,5 +12,5 @@
 </div>
 
 <?php require "views/partials/listshows.php" ?>
-
+<script src="views/searchdate/js/searchdate.js"></script>
 <?php require "views/partials/footer.php" ?>
