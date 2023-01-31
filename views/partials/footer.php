@@ -14,20 +14,20 @@
       <div>
         <p>
           <span
-            class="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400"
+            class="text-xs tracking-wide uppercase text-gray-400"
           >
             Call us
           </span>
 
           <a
             href="#"
-            class="block text-2xl font-medium text-gray-900 hover:opacity-75 dark:text-white sm:text-3xl"
+            class="block text-2xl font-medium hover:opacity-75 text-white sm:text-3xl"
           >
             0123456789
           </a>
         </p>
 
-        <ul class="mt-8 space-y-1 text-sm text-gray-700 dark:text-gray-200">
+        <ul class="mt-8 space-y-1 text-sm text-gray-200">
           <li>Monday to Sunday: 8am - 5pm</li>
         </ul>
 
@@ -37,7 +37,7 @@
               href="/"
               rel="noreferrer"
               target="_blank"
-              class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+              class="transition hover:opacity-75 text-gray-200"
             >
               <span class="sr-only">Facebook</span>
 
@@ -61,7 +61,7 @@
               href="/"
               rel="noreferrer"
               target="_blank"
-              class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+              class="transition hover:opacity-75 text-gray-200"
             >
               <span class="sr-only">Instagram</span>
 
@@ -85,7 +85,7 @@
               href="/"
               rel="noreferrer"
               target="_blank"
-              class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+              class="transition hover:opacity-75 text-gray-200"
             >
               <span class="sr-only">Twitter</span>
 
@@ -107,14 +107,14 @@
 
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
-          <p class="font-medium text-gray-900 dark:text-white">Tickets With Us</p>
+          <p class="font-medium text-white">Tickets With Us</p>
 
           <nav aria-label="Footer Navigation - Services" class="mt-6">
             <ul class="space-y-4 text-sm">
               <li>
                 <a
                   href="#"
-                  class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                  class="transition hover:opacity-75 text-gray-200"
                 >
                   Sell tickets with use
                 </a>
@@ -125,14 +125,14 @@
         </div>
 
         <div>
-          <p class="font-medium text-gray-900 dark:text-white">Company</p>
+          <p class="font-medium text-white">Company</p>
 
           <nav aria-label="Footer Navigation - Company" class="mt-6">
             <ul class="space-y-4 text-sm">
               <li>
                 <a
                   href="#"
-                  class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                  class="transition hover:opacity-75 text-gray-200"
                 >
                   About
                 </a>
@@ -141,7 +141,7 @@
               <li>
                 <a
                   href="#"
-                  class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                  class="transition hover:opacity-75 text-gray-200"
                 >
                   Contact
                 </a>
@@ -155,7 +155,7 @@
 
     <div class="pt-12 mt-12 border-t border-gray-100 dark:border-gray-800">
       <div class="sm:flex sm:items-center sm:justify-end">
-        <p class="mt-8 text-xs text-gray-500 dark:text-gray-400 sm:mt-0">
+        <p class="mt-8 text-xs text-gray-500 text-gray-400 sm:mt-0">
           &copy; 2023. Cambo Show. All rights reserved.
         </p>
       </div>
