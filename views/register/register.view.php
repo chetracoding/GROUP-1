@@ -92,4 +92,5 @@
     </div>
 </main>
 
+<script src="views/register/js/register.js"></script>
 <?php require "views/partials/footer.php" ?>
