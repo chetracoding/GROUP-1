@@ -10,6 +10,5 @@ function hide()
 }
 
 // ADD EVENTS
-
-document.querySelector("#sitting").addEventListener("mouseover", show);
-document.querySelector("#sitting").addEventListener("mouseout", hide);
+$('#sitting').mouseover(show);
+$('#sitting').mouseout(hide);

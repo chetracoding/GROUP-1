@@ -5,5 +5,3 @@ var yyyy = today.getFullYear() - 18;
 
 today = yyyy + '-' + mm + '-' + dd;
 $('#date').attr('max',today);
-
-console.log(yyyy);
