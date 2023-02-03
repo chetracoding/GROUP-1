@@ -7,7 +7,8 @@ body {
     width: 350px;
 }
 #card-shows{
-	height: 60vh;
+	height: 65vh;
+	cursor: pointer;
 }
 
 #form-date{
