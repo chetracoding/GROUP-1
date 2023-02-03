@@ -1,14 +1,35 @@
 // FUNCTIONS
-function show()
+function show(element)
 {
-    document.querySelector("#sitting").style.display = 'block';
+    element.style.display = 'block';
 }
 
-function hide()
+function hide(element)
 {
-    document.querySelector("#sitting").style.display = 'none';
+    element.style.display = 'none';
 }
+
+function showSitting () {
+    const sitting = $('#sitting')[0];
+    show(sitting);
+}
+
 
 // ADD EVENTS
-$('#sitting').mouseover(show);
-$('#sitting').mouseout(hide);
+const logoutDailog = $('.logout-dailog')[0];
+
+$("#sitting").on( "mouseover", function() {
+    show(this);
+});
+
+$("#sitting").on( "mouseout", function() {
+    hide(this);
+});
+
+$("#btn-logout").on( "click", function() {
+    show(logoutDailog);
+});
+
+$("#logout-cancel").on( "click", function() {
+    hide(logoutDailog);
+});
