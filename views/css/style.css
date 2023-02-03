@@ -153,3 +153,8 @@ body {
   from {transform: scale(1, 1);}
   to {transform: scale(1.2, 1.2);}
 }
+
+iframe{
+	width: 100% !important;;
+    height:100% !important;
+}

@@ -5,7 +5,7 @@
 
   <div class="flex p-7 gap-10 ">
       <div class="w-2/4 flex items-center justify-center">
-        <img src="<?= $details['image'] ?>">
+        <?= $details['video_trailer'] ?>
       </div>
       <div class="flex flex-col justify-between bg-gray-700 p-5 border-l-4 border-stone-200 w-2/4 text-left">
         <h1 class="text-2xl font-bold text-slate-200 sm:pr-12"><?= $details['name']?></h1>
@@ -34,11 +34,6 @@
       </div>
     </div>
   </div>
-
-  <div class="flex items-center justify-center mx-11 my-10">
-    <?= $details['video_trailer'] ?>
-  </div>
-
 </div>
 
 <?php require "views/partials/footer.php" ?>
