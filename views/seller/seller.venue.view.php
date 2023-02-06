@@ -27,7 +27,7 @@
                         </div>
                         <div class="w-1/2 ml-2 flex flex-col">
                             <span>Address: </span>
-                            <span class="font-bold"><?= $venue['address']; ?></span>
+                            <span class="font-bold"><?= $venue['venue_address']; ?></span>
                         </div>
                         <div>
                             <div class="p-3">

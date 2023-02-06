@@ -8,11 +8,11 @@
         <?= $details['video_trailer'] ?>
       </div>
       <div class="flex flex-col justify-between bg-gray-700 p-5 border-l-4 border-stone-200 w-2/4 text-left">
-        <h1 class="text-2xl font-bold text-slate-200 sm:pr-12"><?= $details['name']?></h1>
+        <h1 class="text-2xl font-bold text-slate-200 sm:pr-12"><?= $details['title']?></h1>
         <div class="h-3/4 text-left mt-5">
           <div>
               <p class="text-slate-200 font-bold text-gray-900 sm:pr-12">Price Detail</p>
-              <p class="text-slate-200">4$</p>
+              <p class="text-slate-200">$<?= $details['price']?></p>
           </div>
           <div>
               <p class="font-bold text-slate-200 sm:pr-12">Date Time</p>
@@ -20,11 +20,11 @@
           </div>
           <div>
               <p class="font-bold text-slate-200 sm:pr-12">Duration</p>
-              <p class="text-slate-200">1 HR. 50 MINS</p>
+              <p class="text-slate-200"><?= $details['duration'] ?></p>
           </div>
           <div>
               <p class="font-bold text-slate-300 sm:pr-12">Description</p>
-              <p class="text-slate-200"><?= $details['details'] ?></p>
+              <p class="text-slate-200"><?= $details['description'] ?></p>
           </div>
         </div>
         <div class = "flex justify-between">
