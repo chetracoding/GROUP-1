@@ -1,5 +1,4 @@
 <?php
-session_start();
 require "models/login.model.php";
 
 $errors = [];
@@ -13,14 +12,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if (empty($errors)) {
-        if (getEmail($_POST['email'])) {
-            $encrypt = getPasswordByEmail($_POST['email'])['password'];
+        if (checkEmail($_POST['email'])) {
+            $encrypt = getUserByEmail($_POST['email'])['password'];
             if (password_verify($_POST['password'], $encrypt)) {
                 $_SESSION['email'] = $_POST['email'];
-                $_SESSION['first-name'] = getFirstNameByEmail($_POST['email'])['first_name'];
+                $_SESSION['role'] = getUserByEmail($_POST['email'])['role'];
+                $_SESSION['user-id'] = getUserByEmail($_POST['email'])['user_id'];
+                $_SESSION['first-name'] = getUserByEmail($_POST['email'])['first_name'];
                 header('location: /');
-            }
-            else {
+            } else {
                 $errors['incorrect-password'] = "Incorrect password.";
             }
         } else {

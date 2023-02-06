@@ -1,8 +1,8 @@
 <?php
-require 'models/listshow.model.php';
+// require 'models/listshow.model.php';
 
-$today = date("Y-m-d");
+// $today = date("Y-m-d");
 
-$shows = getShowsByDate($today);
+// $shows = getShowsByDate($today);
 
 require "views/home/home.view.php"; 

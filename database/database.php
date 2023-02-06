@@ -1,7 +1,7 @@
 <?php
 
 $hostname = "localhost";
-$database = "concert_ticket";
+$database = "concert_db";
 $username = "root";
 $password = "";
 

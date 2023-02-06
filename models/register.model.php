@@ -3,7 +3,7 @@
 function createUser(string $firstName, string $lastName, string $date, string $address, string $email, string $password) : bool
 {
     global $connection;
-    $statement = $connection->prepare("insert into users (first_name, last_name, date, address, email, password) values (:first_name, :last_name, :date, :address, :email, :password)");
+    $statement = $connection->prepare("insert into users (first_name, last_name, date, address, email, password, role) values (:first_name, :last_name, :date, :address, :email, :password, 'customer');");
     $statement->execute([
         ':first_name' => $firstName,
         ':last_name' => $lastName,
