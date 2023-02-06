@@ -6,7 +6,7 @@
 
 <main >
 
-<!-- <?php require "views/partials/listshows.php" ?> -->
+<?php require "views/partials/listshows.php" ?>
 
 </main>
 
