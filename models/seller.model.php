@@ -13,7 +13,7 @@ function getVenuesByUserId(string $id) : array
 function getShowsByUserId(string $id) : array
 {
     global $connection;
-    $statement = $connection->prepare("select * from user_shows where user_id=:id;");
+    $statement = $connection->prepare("select * from seller_shows where user_id=:id;");
     $statement->execute([
         ':id' => $id,
     ]);
