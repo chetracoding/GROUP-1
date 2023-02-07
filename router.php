@@ -19,6 +19,7 @@ if (isset($_SESSION['role'])) {
     if ($_SESSION['role'] == 'seller') {
         $routes['/seller'] = 'controllers/seller/seller.controller.php';
         $routes['/seller/venue'] = 'controllers/seller/seller.venue.controller.php';
+        $routes['/seller/createshow'] = 'controllers/seller/seller.createshow.controller.php';
     }
 
 }
