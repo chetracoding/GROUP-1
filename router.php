@@ -8,7 +8,8 @@ $routes = [
     '/register' => 'controllers/register/register.controller.php',
     '/search' => 'controllers/search/search.controller.php',
     '/searchdate' => 'controllers/searchdate/searchdate.controller.php',
-    '/detail' => 'controllers/details/detail.controller.php'
+    '/detail' => 'controllers/details/detail.controller.php',
+    '/printticket' =>'controllers/printticket/printticket.controller.php'
 ];
 
 if (array_key_exists($uri, $routes)) {
