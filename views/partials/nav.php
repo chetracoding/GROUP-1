@@ -25,7 +25,7 @@ session_start();
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
             <a href="/" class="<?= urlIs('/') ? 'bg-gray-900' : '' ?> text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
-            <a href="/listTickets" class="<?= urlIs('/listTickets') ? 'bg-gray-900' : '' ?> text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Tickets</a>
+            <a href="/listtickets" class="<?= urlIs('/listTickets') ? 'bg-gray-900' : '' ?> text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Tickets</a>
             <a href="/searchdate" class="<?= urlIs('/searchdate') ? 'bg-gray-900' : '' ?> text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Events</a>
             <a href="/about" class="<?= urlIs('/about') ? 'bg-gray-900' : '' ?> text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
             <a href="/contact" class="<?= urlIs('/contact') ? 'bg-gray-900' : '' ?> text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
