@@ -11,7 +11,8 @@ $routes = [
     '/register' => 'controllers/register/register.controller.php',
     '/search' => 'controllers/search/search.controller.php',
     '/searchdate' => 'controllers/searchdate/searchdate.controller.php',
-    '/detail' => 'controllers/details/detail.controller.php'
+    '/detail' => 'controllers/details/detail.controller.php',
+    '/listTickets' => 'controllers/listTickets/listTicket.controller.php'
 ];
 
 // Add seller pages
