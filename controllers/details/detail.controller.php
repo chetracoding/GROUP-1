@@ -7,6 +7,9 @@ if (isset($_GET['id'])) {
     
     if (checkShow(intval($_GET['id']))) {
       $details = getShowId($id );
+      $times = getTimesById($id);
+      $price = getPriceById($id);
+
     } else {
       require 'views/errors/404.php';
       die();
@@ -14,6 +17,6 @@ if (isset($_GET['id'])) {
     
   }
 }
-// $times = getStartTime();
 
+// print_r($price);
 require "views/details/detail.view.php";

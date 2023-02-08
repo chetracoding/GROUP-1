@@ -41,43 +41,47 @@
 
   <div class="flex p-7 gap-10 text-white ">
       <div class="w-2/4 flex flex-col space-y-4 p-10 ">
-        <h2 class="text-2xl font-bold text-white sm:pr-12">Date abd number of ticket</h2>
-        <label for="address" class="block mb-2 text-sm font-medium text-white dark:text-black">Selecte time</label>
-        <select id="address" name="address" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5">
-            <option selected disabled>Choose</option>
+        <h2 class="text-2xl font-bold text-white sm:pr-12">Date and number of ticket</h2>
+        <label for="date" class="block mb-2 text-sm font-medium text-white dark:text-black">Selecte time</label>
+        <select id="date" name="date" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5">
+            <option selected disabled>Choose times</option>
+
+            <?php foreach ($times as $time): ?>
+                <option value="<?=$time['release_date_id']?>"><?='Date: '.$time['date']." | Time: " . $time['start_time'].' to '.  $time['end_time'] ?></option>
+            <?php endforeach; ?>
+
         </select>
         <div class ="space-y-4">
-            <label for="number" class="block mb-2 text-sm font-medium text-white dark:text-black">Number of ticket</label>
-            <input type="number" name="number" id="password" value="" placeholder="number ticket" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5">
-            <span class="text-red-600"></span>
+            <label for="number-ticket" class="block mb-2 text-sm font-medium text-white dark:text-black">Number of ticket</label>
+            <input type="number" name="number" id="number-ticket" value="" placeholder="number ticket" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5">
+            <span id="error-number-ticket" class="text-red-600"></span>
         </div>
       </div>
       <div class="flex flex-col bg-white p-5 border-l-4 border-stone-200 w-2/4 text-black">
-        <h1 class="text-2xl font-bold text-black sm:pr-12">List of booking ticket</h1>
+        <h1 class="text-2xl font-bold text-black sm:pr-12"><?= $details['title']?></h1>
         <div class="h-3/4 text-black mt-5">
-          <div>
-              <p class="text-black font-bold sm:pr-12">Moview Title :</p>
-              <p class="text-black-200"></p>
-          </div>
-          <div>
-              <p class="font-bold text-black sm:pr-12">Date Time :</p>
-              <p class="text-slate-200"></p>
-          </div>
-          <div>
-              <p class="font-bold text-black sm:pr-12">Number of ticket :</p>
-              <p class="text-black"></p>
-          </div>
-          <div>
-              <p class="font-bold text-black sm:pr-12">Total :</p>
-              <p class="text-black"></p>
-          </div>
-          <div>
-              <p class="font-bold text-black sm:pr-12">Venues :</p>
-              <p class="text-black"></p>
-          </div>
+            <div>
+              <p class="text-black sm:pr-12">Movie Title : <span class="font-bold text-black"><?= $details['title']?></span></p>
+            </div>
+            <div>
+              <p class="text-black sm:pr-12">Date : <span id="get-date" class="font-bold text-black"></span></p>
+            </div>
+            <div>
+              <p class="text-black sm:pr-12">Time : <span id="get-time" class="font-bold text-black"></span></p>
+            </div>
+            <div>
+              <p class="text-black sm:pr-12">Total tickets: <span id = "get-price" class="font-bold text-black"><?= $price['price']?></span></p>
+            </div>
+            <div>
+              <p class="text-black sm:pr-12">Ticket can buy: <span class="font-bold text-black"></span></p>
+            </div>
+            <div>
+              <p class="text-black sm:pr-12">Your ticket: <span id="your-ticket" class="font-bold text-black"></span></p>
+            </div>
+
         </div>
         <div class = "flex justify-end">
-            <a class="flex w-50 items-center justify-center  rounded-md border border-transparent bg-green-600 py-2 px-8 text-base font-medium text-white hover:bg-green-700" href="/">Booking now</a>
+            <button type="button" class="flex w-50 items-center justify-center  rounded-md border border-transparent bg-green-600 py-2 px-8 text-base font-medium text-white hover:bg-green-700">Booking now</button>
         </div>
       </div>
     </div>
@@ -107,51 +111,5 @@
     </form>
 </div>
 
-<script language="javascript">
-      // VARIABLES
-      var today = new Date();
-      var dd = String(today.getDate()).padStart(2, '0');
-      var mm = String(today.getMonth() + 1).padStart(2, '0');
-      var yyyy = today.getFullYear();
-      today = yyyy + '-' + mm + '-' + dd;
-      $('#expires-date').attr('min',today);
-      
-      // FUNCTIONS
-      function onPay(event) 
-      {
-          let isCorrect = true;
-
-          if ($("#number-card").val().length != 16) {
-              isCorrect = false;
-              $("#error-number").text("Please input only 16 digits");
-          }
-
-          if ($("#expires-date").val() == "") {
-              isCorrect = false;
-              $("#error-date").text("Please input card expiration date");
-          } else {
-              $("#error-date").text("");
-          }
-      }
-      
-      function  validateCardNumber(element) 
-      {
-          if (element.value.length != 16) {
-              $("#error-number").text("Please input only 16 digits");
-          } else {
-              $("#error-number").text("");
-          }
-      }
-
-      // ADD EVENT LISTENERS
-      $("#number-card").on( "keyup", function() {
-          validateCardNumber(this);
-      });
-
-      $("#btn-card").on( "click", function(e) {
-          onPay(e);
-      });
-
-</script>
-  
+<script src="views/details/js/detail.js"></script>
 <?php require "views/partials/footer.php" ?>
