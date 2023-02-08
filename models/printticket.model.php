@@ -1,8 +1,11 @@
 <?php
-$statement = $connection->prepare("select * from customer_tickets where ticket_id=:id;");
+function getTicketById(int $ticketId) : array
+{
+    global $connection;
+    $statement = $connection->prepare("select * from customer_tickets where ticket_id=:id;");
     $statement->execute([':id' => $ticketId]);
     return $statement->fetch();
-
+}
 function checkTticketById(int $userId, int $ticketId) : bool
 {
     global $connection;
