@@ -14,5 +14,6 @@ if (isset($_GET['id'])) {
     
   }
 }
+// $times = getStartTime();
 
 require "views/details/detail.view.php";
