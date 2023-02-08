@@ -82,6 +82,76 @@
       </div>
     </div>
   </div>
+
 </div>
-  <script src="js/script.js"></script>
+
+<div class="flex flex-col items-center margin-top: 100px;" id="credit-card">
+    <form class="bg-white shadow-2xl px-8 pt-6 pb-8 mb-4 w-2/5">
+        <h1 class="font-bold text-2xl text-center pb-8">Confirm Purchase</h1>
+        <div class="mb-6">
+            <label class="block text-sm mb-2 flex-col text-start font-bold">Number card</label>
+            <input type="number" id="number-card" class="w-full border-green-600 py-2 px-4 rounded-lg focus:ring-2 focus:ring-green-200"></input> <br>
+            <span class="text-red-500 text-start" id="error-number">
+        </div>
+        <div class="mb-6">
+            <label class="block text-sm mb-2 text-start font-bold"> Expires Date </label>
+            <input type="date" id="expires-date" class="w-full border-green-600 py-2 px-4 rounded-lg focus:ring-2 focus:ring-green-200"> </input><br>
+            <span  class="text-red-500 text-start" id="error-date">
+        </div>
+
+        <div class="flex items-center justify-between">
+            <button id="btn-card" class="bg-green-500 w-full hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg">
+                Pay Now  
+            </button>
+        </div>
+    </form>
+</div>
+
+<script language="javascript">
+      // VARIABLES
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0');
+      var yyyy = today.getFullYear();
+      today = yyyy + '-' + mm + '-' + dd;
+      $('#expires-date').attr('min',today);
+      
+      // FUNCTIONS
+      function onPay(event) 
+      {
+          let isCorrect = true;
+
+          if ($("#number-card").val().length != 16) {
+              isCorrect = false;
+              $("#error-number").text("Please input only 16 digits");
+          }
+
+          if ($("#expires-date").val() == "") {
+              isCorrect = false;
+              $("#error-date").text("Please input card expiration date");
+          } else {
+              $("#error-date").text("");
+          }
+      }
+      
+      function  validateCardNumber(element) 
+      {
+          if (element.value.length != 16) {
+              $("#error-number").text("Please input only 16 digits");
+          } else {
+              $("#error-number").text("");
+          }
+      }
+
+      // ADD EVENT LISTENERS
+      $("#number-card").on( "keyup", function() {
+          validateCardNumber(this);
+      });
+
+      $("#btn-card").on( "click", function(e) {
+          onPay(e);
+      });
+
+</script>
+  
 <?php require "views/partials/footer.php" ?>
