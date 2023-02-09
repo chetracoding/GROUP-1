@@ -18,11 +18,10 @@ function checkShow(int $id) : bool
 function getTimesById(int $id) : array
 {
     global $connection;
-    $statement = $connection->prepare("select release_date_id, date, start_time, end_time from release_date_shows where show_id=:id;");
+    $statement = $connection->prepare("select * from total_buyings where show_id=:id;");
     $statement->execute([ ':id' => $id ]);
     return $statement->fetchAll();
 }
-
 
 function getPriceById(int $id)
 {

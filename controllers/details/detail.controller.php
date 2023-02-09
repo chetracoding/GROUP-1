@@ -18,5 +18,4 @@ if (isset($_GET['id'])) {
   }
 }
 
-// print_r($price);
 require "views/details/detail.view.php";
