@@ -22,11 +22,3 @@ function getTimesById(int $id) : array
     $statement->execute([ ':id' => $id ]);
     return $statement->fetchAll();
 }
-
-function getPriceById(int $id)
-{
-    global $connection;
-    $statement = $connection->prepare("select price from shows where show_id=:id;");
-    $statement->execute([ ':id' => $id ]);
-    return $statement->fetch();
-}

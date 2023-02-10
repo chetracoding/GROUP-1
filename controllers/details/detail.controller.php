@@ -8,8 +8,6 @@ if (isset($_GET['id'])) {
     if (checkShow(intval($_GET['id']))) {
       $details = getShowId($id );
       $times = getTimesById($id);
-      $price = getPriceById($id);
-
     } else {
       require 'views/errors/404.php';
       die();

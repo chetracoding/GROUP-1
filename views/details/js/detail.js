@@ -4,7 +4,7 @@ var dd = String(today.getDate()).padStart(2, '0');
 var mm = String(today.getMonth() + 1).padStart(2, '0');
 var yyyy = today.getFullYear();
 today = yyyy + '-' + mm + '-' + dd;
-$('#expires-date').attr('min',today);
+$('#card-expiration').attr('min',today);
 let userTickets = 0;
 
 // FUNCTIONS
@@ -14,13 +14,13 @@ function onPay(event)
         $("#error-number").text("Please input only 16 digits");
     }
 
-    if (!$('#expires-date').val()) {
+    if (!$('#card-expiration').val()) {
         $("#error-card-expiration").text("Please input card expiration date");
     } else {
         $("#error-card-expiration").text("");
     }
 
-    if ($("#number-card").val().length == 16 && $('#expires-date').val()) {
+    if ($("#number-card").val().length == 16 && $('#card-expiration').val()) {
         $("#btn-pay").prop('type','submit');
     } else {
         $("#btn-pay").prop('type','button');
@@ -118,6 +118,6 @@ $("#btn-pay").on( "click", function() {
     onPay();
 });
 
-$("#expires-date").on( "change", function() {
+$("#card-expiration").on( "change", function() {
     onPay();
 });

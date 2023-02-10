@@ -37,13 +37,13 @@
 
 
 <div class="mx-11 my-10 bg-gray-800 ">
-  <form action="controllers/details/buy.controller.php" method="GET">
+  <form action="/detail/buy" method="POST">
 
     <div class="flex p-7 gap-10 text-white ">
       <div class="w-2/4 flex flex-col space-y-4 p-10 ">
         <h2 class="text-2xl font-bold text-white sm:pr-12">Date and number of ticket</h2>
         <label for="date" class="block mb-2 text-sm font-medium text-white">Selecte time</label>
-        <select id="date" name="date" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5">
+        <select id="date" name="show-time" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5">
             <option selected disabled>Choose times</option>
 
             <?php foreach ($times as $time): ?>
@@ -56,7 +56,7 @@
         <div class ="space-y-4">
             <label for="number-ticket" class="block mb-2 text-sm font-medium text-white">Number of tickets</label>
             <div class="flex gap-3">
-              <input id="number-ticket" disabled type="number" min="1" max="10" name="number" value="0" placeholder="0" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5">
+              <input id="number-ticket" name="number-tickets" readonly type="number" min="1" max="10" value="0" placeholder="0" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5">
               <button type="button" id="btn-minus">
                 <i class="fa-2x fa-solid fa-circle-minus hover:text-red-500"></i>
               </button>
@@ -108,7 +108,7 @@
         </div>
         <div class="mb-6">
             <label class="block text-sm mb-2 text-start font-bold"> Expires Date </label>
-            <input type="date" id="expires-date" class="w-full border-green-600 py-2 px-4 rounded-lg focus:ring-2 focus:ring-green-200"> </input><br>
+            <input type="date" id="card-expiration" name="card-expiration" class="w-full border-green-600 py-2 px-4 rounded-lg focus:ring-2 focus:ring-green-200"> </input><br>
             <span id="error-card-expiration" class="text-red-600"></span>
         </div>
 
