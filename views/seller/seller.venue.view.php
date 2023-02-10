@@ -4,11 +4,11 @@
     require 'views/partials/aside.seller.php'; 
 ?>
 
-<section class="w-full">
+<section class="w-full ">
     <div id="main" class="w-full main-content flex1 mt-12 md:mt-2 pb-24 md:pb-5">
         <div class="flex justify-between items-center w-full pl-6 pt-6 pr-6">
             <span class="text-slate-700 rounded-md text-lg font-medium">List of Venues</span>
-            <a class="text-center flex items-center text-white-600 rounded-full px-8 py-2 bg-blue-600" href="">
+            <a class="text-center flex items-center text-white-600 rounded-full px-8 py-2 bg-blue-600" href="/seller/venue/createVenue">
                 <i class="fa-sharp fa-solid fa-location-plus fa-2x fa-inverse"></i>
             </a>
         </div>
