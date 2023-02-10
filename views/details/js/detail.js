@@ -85,12 +85,16 @@ function onBooking() {
     if (!$('#date').val()) {
         $("#error-date").text("Please select a date");
     }
-    if($('#number-ticket').val() == 0) {
+    if($('#number-ticket').val() == 0){
         $("#error-number-ticket").text("Please add number tickets");
     }
     if ($('#date').val() && $('#number-ticket').val() != 0) {
         $("#credit-card").css("display", "flex");
     }
+    if ($('#ticket-canbuy').text() == 0) {
+        $("#error-number-ticket").text("Don't have tickets left!");        
+    }
+
 }
 
 // ADD EVENT LISTENERS
