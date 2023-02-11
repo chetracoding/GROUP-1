@@ -50,7 +50,7 @@ function checkStartEndtime(int $showId) : array
 function createShows(string $title, string $description, string $image, string $duration, string $video_trailer, string $action, int $number_ticket, string $price, int $address, int $types ) : bool
 {
     global $connection;
-    $statement = $connection->prepare("insert into shows (title, description, image, duration, video_trailer, action, number_tickets, price, venue_id, type_id) values (:title, :description, :image, :duration, :video_trailer, :action, :number_tickets, :price, :venue_id, :type_id);");
+    $statement = $connection->prepare("insert into shows (title, description, image, duration, video_trailer, action, number_tickets, price, venue_id, type_id) values (:title, :description, :image, :duration, :video_trailer,:action,:number_tickets, :price, :venue_id, :type_id);");
     $statement->execute([
         ':title' => $title,
         ':description' => $description,

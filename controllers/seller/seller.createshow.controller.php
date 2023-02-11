@@ -13,11 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $description = $_POST['description'];
     $duration = $_POST['duration'];
     $video_trailer = $_POST['video_trailer'];
-    $action = $action;
+    $action = $_POST['action'];
     $number_ticket =$_POST['number_tickets'];
-    $start_time = $_POST['start_time'];
-    $end_time = $_POST['end_time'];
-    $date_show = $_POST['date_show'];
     $price = $_POST['price'];
 
     // get image from input
@@ -37,15 +34,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Check action and number of ticket
     empty($action) || trim($action) == "" ? $errors['action'] = "Please enter action." : "";
     empty($number_ticket) ? $errors['number_tickets'] = "Please enter number_ticke." : "";
-    
-    // Check start_time and end_time
-    empty($start_time) || trim($start_time) == "" ? $errors['start_time'] = "Please enter start_time." : "";
-    empty($end_time) || trim($end_time) == "" ? $errors['end_time'] = "Please enter end_time." : "";
-    
-    // Check date of show and price
-    empty( $date_show)? $errors['date_show'] = "Please select date_show." : "";
+
+    // Check price
     empty($price)? $errors['price'] = "Please select price." : "";
-    
 
     // Check address and types
     empty($_POST['address'])? $errors['address'] = "Please select address." : "";
