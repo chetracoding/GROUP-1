@@ -8,43 +8,55 @@ $getNameTypes =  getNameTypes();
 $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Variables
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+    $duration = $_POST['duration'];
+    $video_trailer = $_POST['video_trailer'];
+    $action = $_POST['action'];
+    $number_ticket =$_POST['number_tickets'];
+    $price = $_POST['price'];
+
+    // get image from input
+    $image = $_FILES['image']['name'];
+
     // Check title and description
-    empty($_POST['title']) || trim($_POST['title']) == "" ? $errors['title'] = "Please enter title." : "";
-    empty($_POST['description']) || trim($_POST['description']) == "" ? $errors['description'] = "Please enter description." : "";
+    empty($title) || trim($title) == "" ? $errors['title'] = "Please enter title." : "";
+    empty($description) || trim($description) == "" ? $errors['description'] = "Please enter description." : "";
     
     // Check image and duration
-    empty($_POST['image'])? $errors['image'] = "Please select image." : "";
-    empty($_POST['duration'])? $errors['duration'] = "Please select duration." : "";
+    empty($image )? $errors['image'] = "Please select image." : "";
+    empty($duration)? $errors['duration'] = "Please enter duration." : "";
     
     // Check video_trailer
-    empty($_POST['video_trailer'])? $errors['video_trailer'] = "Please select video_trailer." : "";
+    empty($video_trailer)? $errors['video_trailer'] = "Please select video_trailer." : "";
     
     // Check action and number of ticket
-    empty($_POST['action']) || trim($_POST['action']) == "" ? $errors['action'] = "Please enter action." : "";
-    empty($_POST['number_ticke']) || trim($_POST['number_ticke']) == "" ? $errors['number_ticke'] = "Please enter number_ticke." : "";
-    
-    // Check start_time and end_time
-    empty($_POST['start_time']) || trim($_POST['start_time']) == "" ? $errors['start_time'] = "Please enter start_time." : "";
-    empty($_POST['end_time']) || trim($_POST['end_time']) == "" ? $errors['end_time'] = "Please enter end_time." : "";
-    
-    // Check date of show and price
-    empty($_POST['date_show'])? $errors['date_show'] = "Please select date_show." : "";
-    empty($_POST['price'])? $errors['price'] = "Please select price." : "";
-    
+    empty($action) || trim($action) == "" ? $errors['action'] = "Please enter action." : "";
+    empty($number_ticket) ? $errors['number_tickets'] = "Please enter number_ticke." : "";
+
+    // Check price
+    empty($price)? $errors['price'] = "Please select price." : "";
 
     // Check address and types
     empty($_POST['address'])? $errors['address'] = "Please select address." : "";
     empty($_POST['types'])? $errors['types'] = "Please select types." : "";
     
-
     // Check terms
     isset($_POST['terms'])? "" : $errors['terms'] = "Please check terms.";
 
     if (empty($errors)) {
-        header('Location: /seller/createshow');
+        // Variables
+        $address = (int)($_POST['address']);
+        $types = (int)($_POST['types']);
+        $image_tmp_name=$_FILES['image']['tmp_name'];
+        $image_folder='assets/uploaded/'. $image;
+        move_uploaded_file($image_tmp_name, $image_folder);
+
+        // Insert a new show
+        createShows($title, $description, $image, $duration, $video_trailer, $action, $number_ticket, $price, $address, $types);
+        header('Location: /seller');
     }
 
 }
-
-
 require 'views/seller/seller.createshow.view.php';
