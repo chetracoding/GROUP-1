@@ -12,7 +12,7 @@
         <div class="h-3/4 text-left mt-5 ">
           <div>
               <p class="text-slate-200 font-bold text-gray-900 sm:pr-12">Price Detail</p>
-              <p class="text-slate-200">$<?= $details['price']?></p>
+              <p id ="price" class="text-slate-200">$<?= $details['price']?></p>
           </div>
           <div>
               <p class="font-bold text-slate-200 sm:pr-12">Date Time</p>
@@ -71,7 +71,7 @@
           <h1 class="text-2xl font-bold text-black sm:pr-12"><?= $details['title']?></h1>
           <div class="h-3/4 text-black mt-5">
               <div>
-                <p class="text-black sm:pr-12">Movie Title : <span class="font-bold text-black"><?= $details['title']?></span></p>
+                <p class="text-black sm:pr-12">Venue : <span id = "get-venue" class="font-bold text-black"><?=  $name['name']?></span></p>
               </div>
               <div>
                 <p class="text-black sm:pr-12">Date : <span id="get-date" class="font-bold text-black"></span></p>
@@ -87,6 +87,9 @@
               </div>
               <div>
                 <p class="text-black sm:pr-12">Your ticket: <span id="your-ticket" class="font-bold text-black">0</span></p>
+              </div>
+              <div>
+                <p class="text-black sm:pr-12">Total price: $<span id="total-price" class="font-bold text-black">0</span></p>
               </div>
 
           </div>

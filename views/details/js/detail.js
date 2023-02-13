@@ -47,6 +47,7 @@ function showDetails(element)
             $("#your-ticket").text(0);
             $("#number-ticket").val(0);
             $("#ticket-canbuy").text($("#total-tickets").text() - option.nextElementSibling.textContent);
+          
         }
     }
 }
@@ -78,7 +79,7 @@ function minus(number) {
 function showYourTicket(number) {
     $("#your-ticket").text(number);
     $("#number-ticket").val(number);
-    
+    $("#total-price").text(number * $("#price")[0].textContent.substr(1));
 }
 
 function onBooking() {
