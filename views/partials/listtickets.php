@@ -27,7 +27,7 @@
             </div>
             <div>
                 <div class="p-3">
-                    <a href="/printticket?=<?= $ticket['ticket_id']?>">
+                    <a href="/printticket?id=<?= $ticket['ticket_id']?>">
                         <button class=" text-s flex-1 bg-green-500 text-white py-1 px-4 rounded">View</button>
                     </a>
                 </div>
