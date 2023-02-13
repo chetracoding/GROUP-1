@@ -14,6 +14,9 @@
         </div>
 
         <div class="w-full gap-4">
+            
+        <span class="text-red-600 px-6 py-3"><?= isset($errors['delete_show'])? $errors['delete_show'] : "" ?></span>
+
         <?php foreach($shows as $show) :?>
             <div class="w-full px-6 py-3">
                 <div class="bg-gray-800 from-blue-200 to-blue-100 border-b-4 border-blue-600 shadow-xl p-5">
@@ -40,15 +43,16 @@
                         <div>
                             <div class="p-3">
                                 <a href="">
-                                    <i class="text-green-600  fa-solid fa-pen-to-square fa-2x fa-inverse"></i>
+                                    <i class="text-green-600 fa-solid fa-pen-to-square fa-2x fa-inverse"></i>
                                 </a>
                             </div>
                         </div>
                         <div>
                             <div class="p-3">
-                                <a href="">
+                                <button id="delete"  type="button">
                                     <i class="text-red-600 fa-solid fa-trash-can-xmark fa-2x fa-inverse"></i>
-                                </a>
+                                    <input type="hidden" value="<?= $show['show_id']; ?>">
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -60,4 +64,18 @@
     </div>
 </section>
 
+<div class="delete-dailog justify-center items-center">
+    <div class="dailog-delete-show bg-gray-200 flex flex-col justify-center items-center">
+        <img src="assets/deleteshow.png" width="80px"  class="m-6">
+        <div class="question">
+            <p>Are you sure you want delete your show?</p>
+        </div>    
+        <div class="delete-show-btns">
+            <button type="button" id="btn-cancel" class="bg-green-500 hover:bg-green-700 text-white py-2 px-5 rounded-full mt-9 m-4 shadow-lg">Cancel</button>
+            <button id="delete-btn"><a class="bg-red-600 hover:bg-red-700 text-white py-2 py-2 px-5 rounded-full mt-9 m-4 shadow-lg">Delete</a></button>
+        </div>  
+    </div>  
+</div> 
+
+<script src="views/seller/js/seller.js"></script>
 <?php require 'views/partials/footer.seller.php'; ?>
