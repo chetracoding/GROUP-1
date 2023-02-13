@@ -3,50 +3,87 @@
     require 'views/partials/nav.seller.php'; 
     require 'views/partials/aside.seller.php'; 
 ?>
-<main class="main-register m-auto w-6/12 flex ">
-    <div class="bg-white w-full flex ">
+<main class="main-register w-full flex">
+    <div class="bg-white flex flex-1 m-6 sm:rounded-lg">
+        <input id="show_duration" type="hidden" value="<?= $duration?>">
+
         <div class="w-full flex flex-col items-center justify-center px-8 py-8 shadow mt-10">
-            <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-black">
+            <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
                 Set show times  
             </h1><br>
             <form class="w-full space-y-4" method="POST" enctype="multipart/form-data">
                     <div>
-                        <label for="date_show" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Date_show</label>
+                        <label for="date_show" class="block mb-2 text-sm font-medium text-gray-900 ">Date show</label>
                         <input type="date" name="date_show" id="date_show" value="<?= isset($_POST['date_show'])? $_POST['date_show'] : ""?>" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5" value="2018-07-22">
                         <span class="text-red-600"><?= isset($errors['date_show'])? $errors['date_show'] : ""; ?></span>              
                     </div>
                     <div>
-                        <label for="start_time" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Start_time</label>
+                        <label for="start_time" class="block mb-2 text-sm font-medium text-gray-900 ">Start time</label>
                         <input type="time" name="start_time" id="start_time" value="<?= isset($_POST['start_time'])? $_POST['start_time'] : ""?>" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5" placeholder="Number ticket..">
                         <span class="text-red-600"><?= isset($errors['start_time'])? $errors['start_time'] : ""; ?></span>
                     </div>
                     <div>
-                        <label for="end_time" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">End_time</label>
-                        <input type="time" name="end_time" id="end_time" value="<?= isset($_POST['end_time'])? $_POST['end_time'] : ""?>" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5" placeholder="end_time">
-                        <span class="text-red-600"><?= isset($errors['end_time'])? $errors['end_time'] : ""; ?></span>
+                        <label for="end_time" class="block mb-2 text-sm font-medium text-gray-900 ">End time</label>
+                        <input type="time" name="end_time" id="end_time" readonly value="<?= isset($_POST['end_time'])? $_POST['end_time'] : ""?>" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5" placeholder="end_time">
                     </div>
                 <button type="submit" name = "upload" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-4 mb- focus:outline-none dark:focus:ring-green-800 w-full">Add here</button>
             </form>
         </div>
-        <div class="bg-white w-full border-l-2 border-green-400">
-            <div class="w-full flex flex-col items-center justify-center px-8 py-8  mt-10">
-                    <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-black">
-                        History time of shows  
-                    </h1><br>
-                    <div>
-                        <ol class="list-decimal  text-sm font-bold">
-                                <?php foreach($getDateStartEndTimes as $getDateStartEndTime):?>
-                                <li><?="Date :".$getDateStartEndTime['date']?>
-                                <div class="flex">
-                                    <p><?="Time :".$getDateStartEndTime['start_time']." to ".$getDateStartEndTime['end_time']?></p>
-                                </div>
-                                </li>
-                                <?php endforeach?>
-                        </ol>
-                    </div>
-            </div>
+    </div>
 
-        </div>    
+    <div class="flex-2 m-6">
+                
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+            <table class="w-full text-sm text-left text-gray-500 ">
+                <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white ">
+                    Times of show
+                </caption>
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 ">
+                    <tr>
+                        <th scope="col" class="px-6 py-3">
+                            Date
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Start Time
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            End Time
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            <span class="sr-only">Edit</span>
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            <span class="sr-only">Delete</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($getDateStartEndTimes as $time):?>
+
+                    <tr class="bg-white border-b dark:bg-gray-800 ">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                            <?=$time['date']?>
+                        </th>
+                        <td class="px-6 py-4">
+                            <?=$time['start_time']?>
+                        </td>
+                        <td class="px-6 py-4">
+                            <?=$time['end_time']?>
+                        </td>
+                        <td class="px-6 py-4 text-right">
+                            <a href="#" class="font-medium text-blue-600 hover:underline">Edit</a>
+                        </td>
+                        <td class="px-6 py-4 text-right">
+                            <a href="#" class="font-medium text-red-600 hover:underline">Delete</a>
+                        </td>
+                    </tr>
+
+                    <?php endforeach?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </main>
+
+<script src="../../views/seller/js/seller.js"></script>
 <?php require 'views/partials/footer.seller.php'; ?>
