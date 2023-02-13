@@ -20,13 +20,13 @@
                         <span class="font-bold flex-1 flex-col break-normal"><?= $ticket['date']?></span>
                     </div>
                     <div class="hover:break-after-column">
-                        <span class="font-bold"><?= $ticket['start_time']?>pm - <?= $ticket['end_time']?>pm</span>
+                        <span class="font-bold"><?= $ticket['start_time']?> - <?= $ticket['end_time']?></span>
                     </div>
                     <div class="hover:break-after-column">
                         <span>Number of tickets:</span>
                         <span class="font-bold"><?= $ticket['total_tickets']?></span>
                     </div>
-                    <span>CustomerName: </span>
+                    <span>Customer Name: </span>
                     <span class="font-bold"><?= $ticket['first_name'] .' '. $ticket['last_name']?></span>
                 </div>
                 <div>
@@ -42,10 +42,20 @@
             <a href="/listtickets">
                 <button class="bg-green-500 flex mx-8 text-white py-1 px-4 border-b-4 border-green-500 rounded">Go Back</button>
             </a>
-            <a href="">
-                <button class="bg-green-500 flex mx-8 text-white py-1 px-4 border-b-4 border-green-500 rounded">Scan QR</button>
-            </a>
+            <button type="submit" class="bg-green-500 flex mx-8 text-white py-1 px-4 border-b-4 border-green-500 rounded" onclick="openForm()">Scan QR</button>
+
         </div>
     </div>
 </main>
+
+<div id="popup" style="display: none" class=" flex justify-center items-center">
+    <div class="qr-code rounded-lg flex justify-center bg-white border border-green-500 border-2 p-10 items-center flex-col gap-5">
+        <span class=" text-2xl font-bold flex items-center justify-center">QR Code Result</span>
+        <img src="" alt="qr-code" class="border border-black border-2 p-5">
+        <button type="button" class="btn cancel bg-green-500 flex mx-8  text-white py-1 px-4 flex items-center justify-center border-b-4 border-green-500 w-60 rounded" onclick="closeForm()"></button>
+    </div>
+</div>
+
+<script defer src="views/printticket/js/qrcode.js"></script>
+
 <?php require "views/partials/footer.php" ?>
