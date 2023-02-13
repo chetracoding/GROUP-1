@@ -33,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Store session
         $_SESSION["email"] = $_POST["email"];
         $_SESSION['first-name'] = $_POST['first-name'];
+        $_SESSION['user-id'] = getUserByEmail($_POST["email"])['user_id'];
         $_SESSION["role"] = 'customer';
         header('Location: /');
     }
