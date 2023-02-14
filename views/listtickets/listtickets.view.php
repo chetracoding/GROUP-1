@@ -4,7 +4,7 @@
 
 <div class="flex flex-col gap-4 w-full px-6 py-6">
     
-    <?php if (isset($_SESSION['user-id'])) : ?>
+    <?php if (! empty($tickets)) : ?>
         <h1 class="text-black font-bold">List Tickets</h1>
         <?php require "views/partials/listtickets.php" ?>
     <?php else : ?>
