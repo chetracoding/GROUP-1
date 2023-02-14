@@ -3,7 +3,6 @@
     if (isset($_GET['id'])) {
         $userId =  $_SESSION['user-id'];
         $ticketTd = (int) $_GET['id'];
-        
         if (checkTticketById($userId, $ticketTd)) {
             $ticket = getTicketById($ticketTd);
         } else {

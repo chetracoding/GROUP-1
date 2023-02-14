@@ -1,8 +1,6 @@
-
-generateBtn = document.querySelector(".qr-code .btn"),
+generateBtn = document.querySelector(".qr-code .btn");
 qrImg = document.querySelector(".qr-code img");
 let preValue;
-
 function openForm(){
     document.getElementById("popup").style.display = "flex"; 
     let qrValue = window.location.href;
@@ -15,7 +13,7 @@ function openForm(){
         generateBtn.innerText = "Close QR Code";
     });
 }
-  
+
 function closeForm(){
     document.getElementById("popup").style.display = "none"; 
 }
