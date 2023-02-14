@@ -19,6 +19,4 @@ if (isset($_GET['id'])) {
 
 $name = getVenue($id);
 
-// $venue = getVenue();
-// print_r($venue);
 require "views/details/detail.view.php";
