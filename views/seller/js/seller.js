@@ -1,27 +1,25 @@
 // Functions
 function show(e)
 {
-    dailogdelete.style.display = 'flex';
-
-    let showId = e.target.parentNode.lastElementChild.value
+    dailogDelete.style.display = 'flex';
+    let showId = e.target.parentNode.lastElementChild.value;
     a.href = "/seller/show/delete?id=" + showId;
-    console.log(a);
 }
 
 function hide()
 {
-    dailogdelete.style.display = 'none';
+    dailogDelete.style.display = 'none';
 }
 
 // variables
-let btn_delete = document.querySelectorAll("#delete");
-let btn_cancel = document.querySelector("#btn-cancel");
-let dailogdelete = document.querySelector(".delete-dailog");
+let dailogDelete = document.querySelector(".delete-dailog");
+let btnDelete = document.querySelectorAll("#btn-delete-show");
+let btnCancel = document.querySelector("#btn-cancel");
 let a = document.querySelector("#delete-btn a");
 
 // add events
-for (let btn of btn_delete){
+for (let btn of btnDelete){
     btn.addEventListener("click" , show);
 }
 
-btn_cancel.addEventListener("click" , hide);
+btnCancel.addEventListener("click" , hide);
