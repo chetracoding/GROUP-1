@@ -7,6 +7,8 @@ if (isset($_GET['id'])) {
     
     if (checkShow(intval($_GET['id']))) {
       $details = getShowId($id );
+      $times = getTimesById($id);
+      
     } else {
       require 'views/errors/404.php';
       die();
@@ -15,4 +17,8 @@ if (isset($_GET['id'])) {
   }
 }
 
+$name = getVenue($id);
+
+// $venue = getVenue();
+// print_r($venue);
 require "views/details/detail.view.php";

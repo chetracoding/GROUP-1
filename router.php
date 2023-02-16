@@ -13,7 +13,8 @@ $routes = [
     '/searchdate' => 'controllers/searchdate/searchdate.controller.php',
     '/detail' => 'controllers/details/detail.controller.php',
     '/listtickets' => 'controllers/listtickets/listtickets.controller.php',
-    '/printticket' =>'controllers/printticket/printticket.controller.php'
+    '/printticket' =>'controllers/printticket/printticket.controller.php',
+    '/detail/buy' => 'controllers/details/buy.ticket.controller.php'
 ];
 
 // Add seller pages
@@ -22,6 +23,9 @@ if (isset($_SESSION['role'])) {
         $routes['/seller'] = 'controllers/seller/seller.controller.php';
         $routes['/seller/venue'] = 'controllers/seller/seller.venue.controller.php';
         $routes['/seller/show/delete'] = 'controllers/seller/seller.show.delete.controller.php';
+        $routes['/seller/venue/createVenue'] = 'controllers/seller/seller.createVenue.controller.php';
+        $routes['/seller/createShow'] = 'controllers/seller/seller.createShow.controller.php';
+        $routes['/seller/time'] = 'controllers/seller/seller.show.time.controller.php';
     }
 
 }
