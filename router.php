@@ -26,6 +26,7 @@ if (isset($_SESSION['role'])) {
         $routes['/seller/createShow'] = 'controllers/seller/seller.show.create.controller.php';
         $routes['/seller/editShow'] = 'controllers/seller/seller.show.edit.controller.php';
         $routes['/seller/editVenue'] = 'controllers/seller/seller.venue.edit.controller.php';
+        $routes['/seller/show/delete'] = 'controllers/seller/seller.show.delete.controller.php';
         $routes['/seller/time'] = 'controllers/seller/seller.show.time.controller.php';
         $routes['/seller/time/edit'] = 'controllers/seller/seller.show.time.edit.controller.php';
         $routes['/seller/time/delete'] = 'controllers/seller/seller.show.time.delete.controller.php';
