@@ -118,7 +118,25 @@ function getVenue(string $showId) : array
     ]);
     return $statement->fetch();
 }
-
+function updateShow(string $showId, string $title, string $description, string $image, string $duration, string $video_trailer, string $action, int $number_ticket, string $price, int $address, int $types ) : bool
+{
+    global $connection;
+    $statement = $connection->prepare("update shows set title = :title, description = :description , image =:image, duration=:duration, video_trailer=:video_trailer, action=:action, number_tickets =:number_tickets , price=:price ,venue_id = :venue_id, type_id =:type_id where show_id = :id;");
+    $statement->execute([
+        ':id' => $showId,
+        ':title' => $title,
+        ':description' => $description,
+        ':image' => $image,
+        ':duration' => $duration,
+        ':video_trailer' => $video_trailer,
+        ':action' => $action,
+        ':number_tickets' => $number_ticket,
+        ':price' => $price,
+        ':venue_id' => $address,
+        ':type_id' => $types
+    ]);
+    return $statement->rowCount() > 0;
+}
 function UpdateVenue(int $venueId,string $name, string $venue_address) : bool
 {
     global $connection;
