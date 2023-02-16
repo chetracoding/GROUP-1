@@ -1,6 +1,6 @@
 <?php
 require 'models/detail.model.php';
-require 'models/ticket.buy.model.php';
+require 'models/booking.seat.model.php';
 
 // FUNCTION
 function convertSimpleArray($associativeArray, $column) : array

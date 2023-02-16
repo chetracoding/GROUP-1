@@ -36,17 +36,18 @@
 </div>
 
 <div class="mx-11 my-10 bg-gray-800 ">
-  <div class="p-10 grid grid-cols-4 gap-4">
+  <p class="text-xl pl-10 pt-10 text-gray-100">Choose Times</p>
+  <div class="px-10 pb-10 pt-5 grid grid-cols-4 gap-4">
 
   <?php foreach ($times as $time): ?>
 
     <a href="/detail/seat?show_id=<?=$_GET['show_id']?>&date_id=<?=$time['release_date_id']?>">
-      <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+      <div class="rounded-lg border-gray-400 bg-white p-4 flex flex-col justify-between">
         <div class="flex items-center gap-2">
-          <i class="fa-solid fa-calendar-days"></i>
+          <i class="fa-regular fa-calendar-days"></i>
           <div class="text-gray-900 font-bold text-xl mb-2"><?=$time['date']?></div>
         </div>
-
+    
         <div class="flex items-center gap-2">
           <i class="fa-solid fa-timer"></i>
           <p class="text-gray-700 text-base">Start: <span class="font-bold"><?=$time['start_time']?></span></p>

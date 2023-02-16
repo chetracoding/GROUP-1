@@ -24,11 +24,11 @@ function onPay(event)
 
     if (selectSeat) {
         if ($("#number-card").val().length != 16) {
-            $("#error-number").text("Please input only 16 digits");
+            $("#error-number").text("Please input only 16 digits.");
         }
     
         if (!$('#card-expiration').val()) {
-            $("#error-card-expiration").text("Please input card expiration date");
+            $("#error-card-expiration").text("Please input card expiration.");
         } else {
             $("#error-card-expiration").text("");
         }
@@ -50,7 +50,7 @@ function  validateCardNumber(element)
     }
 }
 
-function hide() 
+function hidePopup() 
 {
     document.querySelector(".no-seat").style.display = "none";
     document.querySelector(".max-seat").style.display = "none";
@@ -70,9 +70,9 @@ $("#card-expiration").on( "change", function() {
 });
 
 $("#btn-no-seat").on( "click", function() {
-    hide();
+    hidePopup();
 });
 
 $("#btn-max-seat").on( "click", function() {
-    hide();
+    hidePopup();
 });
