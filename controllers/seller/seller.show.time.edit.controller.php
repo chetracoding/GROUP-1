@@ -2,16 +2,17 @@
 require 'models/seller.model.php';
 $errors = [];
 
-$checkVenues= checkStartEndtime($_GET['id']);
-$getDateStartEndTimes = getStartEndtime($_GET['id']);
-$duration = getShowById($_GET['id'])['duration'];
+$getTime = getTimeById($_GET['id']);
+$checkVenues= checkStartEndtime($_GET['show_id']);
+$getDateStartEndTimes = getStartEndtime($_GET['show_id']);
+$duration = getShowById($_GET['show_id'])['duration'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Variables
     $start_time = $_POST['start_time'];
     $end_time = $_POST['end_time'];
     $date = $_POST['date_show'];
-    $venueId = getShowById($_GET['id'])['venue_id'];
+    $venueId = getShowById($_GET['show_id'])['venue_id'];
 
     // Check start_time and end_time
     empty($start_time)? $errors['start_time'] = "Please enter start time." : "";
@@ -26,10 +27,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     ($checkTimes == true)? $errors['start_time'] = "Your time already created." : ""; 
 
     if (! $checkTimes && empty($errors)) {
-        createTime($date, $start_time, $end_time, $_GET['id']);
-        $showId = $_GET['id'];
+        updateTime($date, $start_time, $end_time, $_GET['id']);
+        $showId = $_GET['show_id'];
         header("Location: /seller/time?id=$showId");
+        // header("Location: /seller/time?id=$showId");
     }
 }
-require 'views/seller/seller.show.time.view.php';
+require 'views/seller/seller.show.time.edit.view.php';
 ?>

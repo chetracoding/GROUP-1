@@ -5,8 +5,9 @@ $getNameVenues = getVenuesByUserId($_SESSION['user-id']);
 // Get name of type_of_show  from database
 $getNameTypes =  getNameTypes();
 
-$errors = [];
+$editShow = getShowById($_GET['id']);
 
+$errors = [];
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Variables
     $title = $_POST['title'];
@@ -21,11 +22,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $image = $_FILES['image']['name'];
 
     // Check title and description
-    empty($title) || trim($title) == "" ? $errors['title'] = "Please enter title." : "";
+    empty($title) ||  trim($title) == "" ? $errors['title'] = "Please enter title." : "";
     empty($description) || trim($description) == "" ? $errors['description'] = "Please enter description." : "";
     
-    // Check image and duration
-    empty($image )? $errors['image'] = "Please select image." : "";
+    // Check duration
+    if (empty($image)){
+        $image = $editShow['image'];
+    };
     empty($duration)? $errors['duration'] = "Please enter duration." : "";
     
     // Check video_trailer
@@ -41,9 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Check address and types
     empty($_POST['address'])? $errors['address'] = "Please select address." : "";
     empty($_POST['types'])? $errors['types'] = "Please select types." : "";
-    
-    // Check terms
-    isset($_POST['terms'])? "" : $errors['terms'] = "Please check terms.";
 
     if (empty($errors)) {
         // Variables
@@ -54,9 +54,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         move_uploaded_file($image_tmp_name, $image_folder);
 
         // Insert a new show
-        createShows($title, $description, $image, $duration, $video_trailer, $action, $number_ticket, $price, $address, $types);
+        updateShow($_GET['id'], $title, $description, $image, $duration, $video_trailer, $action, $number_ticket, $price, $address, $types);
         header('Location: /seller');
     }
 
 }
-require 'views/seller/seller.createshow.view.php';
+require 'views/seller/seller.show.edit.view.php';

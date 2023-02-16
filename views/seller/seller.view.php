@@ -13,10 +13,10 @@
             </a>
         </div>
 
-        <div class="w-full gap-4">
+        <div class="w-full gap-4 ">
         <?php foreach($shows as $show) :?>
-            <div class="w-full px-6 py-3">
-                <div class="bg-gray-800 from-blue-200 to-blue-100 border-b-4 border-blue-600 shadow-xl p-5">
+            <div class="w-full px-6 py-3 ">
+                <div class=" sm:rounded-lg bg-gray-800 from-blue-200 to-blue-100 border-b-4 border-blue-600 shadow-xl p-5">
                     <div class="text-slate-400 flex flex-row items-center">
                         <div class="flex-shrink pr-4">
                             <img class=" rounded w-20 h-20"src="./assets/uploaded/<?php echo $show['image']; ?>" >
@@ -46,7 +46,7 @@
                         </div>
                         <div>
                             <div class="p-3">
-                                <a href="">
+                                <a href="/seller/editShow?id=<?= $show['show_id']; ?>">
                                     <i class="text-green-600  fa-solid fa-pen-to-square fa-2x fa-inverse"></i>
                                 </a>
                             </div>

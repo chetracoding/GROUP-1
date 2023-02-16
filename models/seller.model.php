@@ -30,7 +30,7 @@ function getShowsByUserId(string $id) : array
 function getStartEndtime(string $showId) : array
 {
     global $connection;
-    $statement = $connection->prepare("select date, start_time, end_time  from release_dates where show_id=:id order by date ASC ;");
+    $statement = $connection->prepare("select * from release_dates where show_id=:id order by date ASC ;");
     $statement->execute([
         ':id' => $showId,
     ]);
@@ -109,5 +109,68 @@ function getShowById(string $showId) : array
     ]);
     return $statement->fetch();
 }
-
-
+function getVenue(string $showId) : array
+{
+    global $connection;
+    $statement = $connection->prepare("select * from venues where venue_id=:id;");
+    $statement->execute([
+        ':id' => $showId,
+    ]);
+    return $statement->fetch();
+}
+function updateShow(string $showId, string $title, string $description, string $image, string $duration, string $video_trailer, string $action, int $number_ticket, string $price, int $address, int $types ) : bool
+{
+    global $connection;
+    $statement = $connection->prepare("update shows set title = :title, description = :description , image =:image, duration=:duration, video_trailer=:video_trailer, action=:action, number_tickets =:number_tickets , price=:price ,venue_id = :venue_id, type_id =:type_id where show_id = :id;");
+    $statement->execute([
+        ':id' => $showId,
+        ':title' => $title,
+        ':description' => $description,
+        ':image' => $image,
+        ':duration' => $duration,
+        ':video_trailer' => $video_trailer,
+        ':action' => $action,
+        ':number_tickets' => $number_ticket,
+        ':price' => $price,
+        ':venue_id' => $address,
+        ':type_id' => $types
+    ]);
+    return $statement->rowCount() > 0;
+}
+function UpdateVenue(int $venueId,string $name, string $venue_address) : bool
+{
+    global $connection;
+    $statement = $connection->prepare("update venues set name = :name, venue_address = :venue_address where venue_id = :id;");
+    $statement->execute([
+        ':id' => $venueId,
+        ':name' => $name,
+        ':venue_address' => $venue_address,
+    ]);
+    return $statement->rowCount() > 0;
+}
+function deleteTimeById(int $timeId) : bool
+{
+    global $connection;
+    $statement = $connection->prepare("delete from release_dates where release_date_id=:time_id;");
+    $statement->execute([ ':time_id' => $timeId]);
+    return $statement->rowCount() > 0;
+}
+function getTimeById(int $timeId) : array
+{
+    global $connection;
+    $statement = $connection->prepare("select * from release_dates where release_date_id=:time_id;");
+    $statement->execute([ ':time_id' => $timeId]);
+    return $statement->fetch();
+}
+function updateTime(string $date, string $start_time, string $end_time, int $id) : bool
+{
+    global $connection;
+    $statement = $connection->prepare("update release_dates set date = :date, start_time = :start_time, end_time = :end_time where release_date_id = :id");
+    $statement->execute([
+        ':date' => $date,
+        ':start_time' => $start_time,
+        ':end_time' => $end_time,
+        ':id' => $id,
+    ]);
+    return $statement->rowCount() > 0;
+}
