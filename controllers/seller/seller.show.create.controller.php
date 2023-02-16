@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     empty($duration)? $errors['duration'] = "Please enter duration." : "";
     
     // Check video_trailer
-    empty($video_trailer)? $errors['video_trailer'] = "Please select video_trailer." : "";
+    empty($video_trailer)? $errors['video_trailer'] = "Please enter video_trailer." : "";
     
     // Check action and number of ticket
     empty($action) || trim($action) == "" ? $errors['action'] = "Please enter action." : "";
@@ -39,12 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     empty($price)? $errors['price'] = "Please select price." : "";
 
     // Check address and types
-    empty($_POST['address'])? $errors['address'] = "Please select address." : "";
-    empty($_POST['types'])? $errors['types'] = "Please select types." : "";
+    empty($_POST['address'])? $errors['address'] = "Please enter address." : "";
+    empty($_POST['types'])? $errors['types'] = "Please enter types." : "";
     
-    // Check terms
-    isset($_POST['terms'])? "" : $errors['terms'] = "Please check terms.";
-
     if (empty($errors)) {
         // Variables
         $address = (int)($_POST['address']);
@@ -59,4 +56,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
 }
-require 'views/seller/seller.createshow.view.php';
+require 'views/seller/seller.show.create.view.php';

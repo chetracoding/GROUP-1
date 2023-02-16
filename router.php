@@ -21,9 +21,13 @@ if (isset($_SESSION['role'])) {
     if ($_SESSION['role'] == 'seller') {
         $routes['/seller'] = 'controllers/seller/seller.controller.php';
         $routes['/seller/venue'] = 'controllers/seller/seller.venue.controller.php';
-        $routes['/seller/venue/createVenue'] = 'controllers/seller/seller.createVenue.controller.php';
-        $routes['/seller/createShow'] = 'controllers/seller/seller.createShow.controller.php';
+        $routes['/seller/venue/createVenue'] = 'controllers/seller/seller.venue.create.controller.php';
+        $routes['/seller/createShow'] = 'controllers/seller/seller.show.create.controller.php';
+        $routes['/seller/editShow'] = 'controllers/seller/seller.show.edit.controller.php';
+        $routes['/seller/editVenue'] = 'controllers/seller/seller.venue.edit.controller.php';
         $routes['/seller/time'] = 'controllers/seller/seller.show.time.controller.php';
+        $routes['/seller/time/edit'] = 'controllers/seller/seller.show.time.edit.controller.php';
+        $routes['/seller/time/delete'] = 'controllers/seller/seller.show.time.delete.controller.php';
     }
 
 }
