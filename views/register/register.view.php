@@ -1,10 +1,10 @@
 <?php require "views/partials/head.php" ?>
 <?php require "views/partials/nav.php" ?>
-<main class="main-register my-20 flex mx-20 bg-slate-900">
+<main class="main-register my-20 flex mx-20 bg-slate-900 rounded-lg">
     <div class="w-6/12 flex flex-col items-center justify-center px-6 py-8 xl:p-5 ">
         <img src="assets/register.png" alt="">
     </div>
-    <div class="bg-white w-6/12">
+    <div class="bg-white w-6/12 rounded-r-lg">
         <div class="w-full flex flex-col items-center justify-center px-8 py-8 shadow">
             <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-black">
                 Create and account
@@ -13,23 +13,23 @@
                 <div class = "flex space-x-4 ">
                     <div>
                         <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">First Name</label>
-                        <input type="text" name="first-name" id="first-name" value="<?= isset($_POST['first-name'])? $_POST['first-name'] : ""?>" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5" placeholder="first name">
+                        <input type="text" name="first-name" id="first-name" value="<?= isset($_POST['first-name'])? $_POST['first-name'] : ""?>" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg font-medium block w-full p-2.5 focus:ring-1 focus:ring-green-400 focus:outline-none focus:border-green-100" placeholder="first name">
                         <span class="text-red-600"><?= isset($errors['first-name'])? $errors['first-name'] : ""; ?></span>
                     </div>
                     <div>
                         <label for="last-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Last Name</label>
-                        <input type="text" name="last-name" id="last-name" value="<?= isset($_POST['last-name'])? $_POST['last-name'] : ""?>" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5" placeholder="last name">
+                        <input type="text" name="last-name" id="last-name" value="<?= isset($_POST['last-name'])? $_POST['last-name'] : ""?>" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg font-medium block w-full p-2.5 focus:ring-1 focus:ring-green-400 focus:outline-none focus:border-green-100" placeholder="last name">
                         <span class="text-red-600"><?= isset($errors['last-name'])? $errors['last-name'] : ""; ?></span>
                     </div>
                 </div>
                 <div>
                     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Date of Birth</label>
-                    <input type="date" name="date" id="date" value="<?= isset($_POST['date'])? $_POST['date'] : ""?>" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5" value="2018-07-22">
+                    <input type="date" name="date" id="date" value="<?= isset($_POST['date'])? $_POST['date'] : ""?>" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg font-medium block w-full p-2.5 focus:ring-1 focus:ring-green-400 focus:outline-none focus:border-green-100" value="2018-07-22">
                     <span class="text-red-600"><?= isset($errors['date'])? $errors['date'] : ""; ?></span>              
                 </div>
                 <div>
                     <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Selecte Your City / Province</label>
-                    <select id="address" name="address" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5">
+                    <select id="address" name="address" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg font-medium block w-full p-2.5 focus:ring-1 focus:ring-green-400 focus:outline-none focus:border-green-100">
                         <option selected disabled>Choose</option>
                         <option value="Phnom Penh" >Phnom Penh</option>
                         <option value="Banteay Meanchey">Banteay Meanchey</option>
@@ -61,25 +61,25 @@
                 </div>
                 <div>
                     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Your email</label>
-                    <input type="email" name="email" id="email" value="<?= isset($_POST['email'])? $_POST['email'] : ""?>" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5" placeholder="Your email">
+                    <input type="email" name="email" id="email" value="<?= isset($_POST['email'])? $_POST['email'] : ""?>" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg font-medium block w-full p-2.5 focus:ring-1 focus:ring-green-400 focus:outline-none focus:border-green-100" placeholder="Your email">
                     <span class="text-red-600"><?= isset($errors['email'])? $errors['email'] : ""; ?></span>              
                 </div>
                 <div>
                     <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-blac">Password</label>
-                    <input type="password" name="password" id="password" value="<?= isset($_POST['password'])? $_POST['password'] : ""?>" placeholder="••••••••" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5">
+                    <input type="password" name="password" id="password" value="<?= isset($_POST['password'])? $_POST['password'] : ""?>" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg font-medium block w-full p-2.5 focus:ring-1 focus:ring-green-400 focus:outline-none focus:border-green-100"  placeholder="••••••••" >
                     <span class="text-red-600"><?= isset($errors['password'])? $errors['password'] : ""; ?></span>
                 </div>
                 <div>
                     <label for="confirm-password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Confirm password</label>
-                    <input type="password" name="confirm-password" id="confirm-password" value="<?= isset($_POST['confirm-password'])? $_POST['confirm-password'] : ""?>" placeholder="••••••••" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5">
+                    <input type="password" name="confirm-password" id="confirm-password" value="<?= isset($_POST['confirm-password'])? $_POST['confirm-password'] : ""?>" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg font-medium block w-full p-2.5 focus:ring-1 focus:ring-green-400 focus:outline-none focus:border-green-100"  placeholder="••••••••">
                     <span class="text-red-600"><?= isset($errors['confirm-password'])? $errors['confirm-password'] : ""; ?></span>   
                 </div>
                 <div class="flex items-start">
                     <div class="flex items-center h-5">
-                        <input id="terms" name="terms" aria-describedby="terms" type="checkbox" class="w-4 h-4 border border-green-400  rounded  focus:ring-3   ">
+                        <input id="terms" name="terms" aria-describedby="terms" type="checkbox" class="cursor-pointer w-4 h-4 border border-green-400  rounded checked:bg-green-500">
                         </div>
                         <div class="ml-3 text-sm">
-                        <label for="terms" class="font-light text-black-500 dark:text-black-300">Remember me </label>
+                        <label for="terms">Remember me </label>
                         <span class="text-red-600"><?= isset($errors['terms'])? $errors['terms'] : ""; ?></span>   
                     </div>
                 </div>
