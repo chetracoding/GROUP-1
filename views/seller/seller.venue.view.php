@@ -8,7 +8,7 @@
     <div id="main" class="w-full main-content flex1 mt-12 md:mt-2 pb-24 md:pb-5">
         <div class="flex justify-between items-center w-full pl-6 pt-6 pr-6">
             <span class="text-slate-700 rounded-md text-lg font-medium">List of Venues</span>
-            <a class="text-center flex items-center text-white-600 rounded-full px-8 py-2 bg-blue-600" href="/seller/venue/createVenue">
+            <a class="text-center flex items-center text-white-600 rounded-full px-8 py-2 bg-blue-600" href="/seller/venue/create">
                 <i class="fa-sharp fa-solid fa-location-plus fa-2x fa-inverse"></i>
             </a>
         </div>
@@ -29,17 +29,16 @@
                             <span>Address: </span>
                             <span class="font-bold"><?= $venue['venue_address']; ?></span>
                         </div>
-                        <div>
+                        <div class="flex">
                             <div class="p-3">
-                                <a href="/seller/editVenue?id=<?= $venue['venue_id']; ?>">
+                                <a href="/seller/venue/edit?id=<?= $venue['venue_id']; ?>">
                                     <i class="text-green-600  fa-solid fa-pen-to-square fa-2x fa-inverse"></i>
                                 </a>
                             </div>
-                        </div>
-                        <div>
                             <div class="p-3">
-                                <a href="">
-                                    <i class="text-red-600 fa-solid fa-trash-can-xmark fa-2x fa-inverse"></i>
+                                <a id="btn-delete-venue">
+                                    <i  class=" cursor-pointer text-red-600 fa-solid fa-trash-can-xmark fa-2x fa-inverse"></i>
+                                    <input type="hidden" id= venueId value="<?= $venue['venue_id']; ?>">
                                 </a>
                             </div>
                         </div>
@@ -51,5 +50,17 @@
         </div>
     </div>
 </section>
-
+<div class="delete-dailog justify-center items-center">
+    <div class="dailog-delete-show bg-gray-200 flex flex-col justify-center items-center">
+        <img src="../../assets/deleteshow.png" width="80px" class="mb-8">
+        <div class="question">
+            <p>Are you sure you want delete your show?</p>
+        </div>    
+        <div class="delete-show-btns">
+            <button type="button" id="btn-cancel" class="bg-green-500 hover:bg-green-700 text-white py-2 px-5 rounded-full mt-9 m-4 shadow-lg">Cancel</button>
+            <button id="delete-btn"><a class="bg-red-600 hover:bg-red-700 text-white py-2 py-2 px-5 rounded-full mt-9 m-4 shadow-lg">Delete</a></button>
+        </div>  
+    </div>  
+</div> 
+<script src="../../views/seller/js/venue.js"></script>
 <?php require 'views/partials/footer.seller.php'; ?>

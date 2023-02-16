@@ -5,8 +5,8 @@
     require 'views/partials/aside.seller.php'; 
 ?>
 
-<main class="main-register w-full flex">
-    <div class="bg-white flex flex-1 m-6 sm:rounded-lg">
+<main class=" w-full  flex">
+    <div class="bg-white flex flex-1 m-10 sm:rounded-lg">
         <input id="show_duration" type="hidden" value="<?= $duration?>">
 
         <div class="w-full flex flex-col items-center justify-center px-8 py-8 shadow mt-10">
@@ -34,7 +34,7 @@
         </div>
     </div>
 
-    <div class="flex-2 m-6">
+    <div class="flex-2 mt-10">
                 
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left text-gray-500 ">
@@ -77,7 +77,9 @@
                             <a href="/seller/time/edit?id=<?=$time['release_date_id']?>&show_id=<?=$time['show_id']?>" class="font-medium text-blue-600 hover:underline">Edit</a>
                         </td>
                         <td class="px-6 py-4 text-right">
-                            <a href="/seller/time/delete?id=<?=$time['release_date_id']?>&show_id=<?=$time['show_id']?>" class="font-medium text-red-600 hover:underline">Delete</a>
+                            <input type="hidden" value="<?= $time['show_id']; ?>">
+                            <a id="btn-delete-time" class="font-medium text-red-600 hover:underline cursor-pointer">Delete</a>
+                            <input type="hidden" value="<?= $time['release_date_id']; ?>">
                         </td>
                     </tr>
 
@@ -88,5 +90,18 @@
     </div>
 </main>
 
-<script src="../../views/seller/js/seller.js"></script>
+<div class="delete-dailog justify-center items-center">
+    <div class="dailog-delete-show bg-gray-200 flex flex-col justify-center items-center">
+        <img src="../../assets/deleteshow.png" width="80px" class="mb-8">
+        <div class="question">
+            <p>Are you sure you want delete your show?</p>
+        </div>    
+        <div class="delete-show-btns">
+            <button type="button" id="btn-cancel" class="bg-green-500 hover:bg-green-700 text-white py-2 px-5 rounded-full mt-9 m-4 shadow-lg">Cancel</button>
+            <button id="delete-btn"><a class="bg-red-600 hover:bg-red-700 text-white py-2 py-2 px-5 rounded-full mt-9 m-4 shadow-lg">Delete</a></button>
+        </div>  
+    </div>  
+</div> 
+
+<script src="../../views/seller/js/time.js"></script>
 <?php require 'views/partials/footer.seller.php'; ?>

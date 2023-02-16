@@ -3,7 +3,7 @@
     require 'views/partials/nav.seller.php'; 
     require 'views/partials/aside.seller.php'; 
 ?>
-<main class="main-register w-full flex">
+<main class=" w-full flex">
     <div class="bg-white flex flex-1 m-6 sm:rounded-lg">
         <input id="show_duration" type="hidden" value="<?= $duration?>">
 

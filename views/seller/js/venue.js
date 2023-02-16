@@ -2,8 +2,9 @@
 function show(e)
 {
     dailogDelete.style.display = 'flex';
-    let showId = e.target.parentNode.lastElementChild.value;
-    a.href = "/seller/show/delete?id=" + showId;
+    let venueId = e.target.parentNode.lastElementChild.value;
+    console.log(venueId);
+    a.href = "/seller/venue/delete?id=" + venueId;
 }
 
 function hide()
@@ -13,7 +14,7 @@ function hide()
 
 // variables
 let dailogDelete = document.querySelector(".delete-dailog");
-let btnDelete = document.querySelectorAll("#btn-delete-show");
+let btnDelete = document.querySelectorAll("#btn-delete-venue");
 let btnCancel = document.querySelector("#btn-cancel");
 let a = document.querySelector("#delete-btn a");
 
