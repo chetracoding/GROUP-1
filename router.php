@@ -14,7 +14,10 @@ $routes = [
     '/detail' => 'controllers/details/detail.controller.php',
     '/listtickets' => 'controllers/listtickets/listtickets.controller.php',
     '/printticket' =>'controllers/printticket/printticket.controller.php',
-    '/detail/buy' => 'controllers/details/buy.ticket.controller.php'
+    '/detail/buy' => 'controllers/details/buy.ticket.controller.php',
+    '/codesecurity' => 'controllers/recoverpassword/forgotpassword.code.controller.php',
+    '/forgotpassword' => 'controllers/recoverpassword/forgotpassword.controller.php',
+    '/recoverpassword' => 'controllers/recoverpassword/recoverpassword.controller.php'
 ];
 
 // Add seller pages
