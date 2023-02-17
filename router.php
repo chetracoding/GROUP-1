@@ -21,7 +21,9 @@ $routes = [
     '/Musical' => 'controllers/filter/filter.controller.php',
     '/Classical' => 'controllers/filter/filter.controller.php',
     '/Drama' => 'controllers/filter/filter.controller.php',
-    '/Concert' => 'controllers/filter/filter.controller.php'
+    '/Concert' => 'controllers/filter/filter.controller.php',
+    '/profile' =>'controllers/profile/profile.controller.php',
+    '/password' =>'controllers/password/password.controller.php'
 ];
 
 // Add seller pages
