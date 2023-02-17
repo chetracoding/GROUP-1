@@ -15,10 +15,10 @@ function checkShow(int $id) : bool
     return $statement->rowCount() > 0;
 }
 
-function getTimesById(int $id) : array
+function getTimesByShowId(int $id) : array
 {
     global $connection;
-    $statement = $connection->prepare("select * from total_buyings where show_id=:id;");
+    $statement = $connection->prepare("select * from release_date_shows where show_id=:id;");
     $statement->execute([ ':id' => $id ]);
     return $statement->fetchAll();
 }

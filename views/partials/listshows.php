@@ -24,7 +24,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z" /></svg>
           <p class="mb-3 text-sm italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"><?= $show['action']?></p>
         </div>
-        <button class="rounded-full hover:bg-green-500 hover:text-white py-2 px-4 border border-green-500 hover:border-transparent py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60"><a href="/detail?id=<?= $show['show_id']?>">See More </a></button>
+        <button class="rounded-full hover:bg-green-500 hover:text-white py-2 px-4 border border-green-500 hover:border-transparent py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60"><a href="/detail?show_id=<?= $show['show_id']?>">See More </a></button>
       </div>
       </div>
       <?php endforeach; ?>
