@@ -58,10 +58,10 @@ function checkReleaseTimes(string $date, string $startTime, string $endTime, int
     ]);
     return $statement->rowCount() > 0;
 }
-function createShows(string $title, string $description, string $image, string $duration, string $video_trailer, string $action, int $number_ticket, string $price, int $address, int $types ) : bool
+function createShow(string $title, string $description, string $image, string $duration, string $video_trailer, string $action, string $price, int $address, int $types ) : bool
 {
     global $connection;
-    $statement = $connection->prepare("insert into shows (title, description, image, duration, video_trailer, action, number_tickets, price, venue_id, type_id) values (:title, :description, :image, :duration, :video_trailer,:action,:number_tickets, :price, :venue_id, :type_id);");
+    $statement = $connection->prepare("insert into shows (title, description, image, duration, video_trailer, action, price, venue_id, type_id) values (:title, :description, :image, :duration, :video_trailer,:action,:price, :venue_id, :type_id);");
     $statement->execute([
         ':title' => $title,
         ':description' => $description,
@@ -69,7 +69,6 @@ function createShows(string $title, string $description, string $image, string $
         ':duration' => $duration,
         ':video_trailer' => $video_trailer,
         ':action' => $action,
-        ':number_tickets' => $number_ticket,
         ':price' => $price,
         ':venue_id' => $address,
         ':type_id' => $types
@@ -89,13 +88,15 @@ function createTime(string $date, string $start_time, string $end_time, int $id)
     ]);
     return $statement->rowCount() > 0;
 }
-function createVenue(string $name, string $address, string $userId,) : bool
+function createVenue(string $name, string $address, string $seatRow, int $numberColumn, string $userId,) : bool
 {
     global $connection;
-    $statement = $connection->prepare("insert into venues (name, venue_address, user_id) values (:name, :address,:user_id) ;");
+    $statement = $connection->prepare("insert into venues (name, venue_address, seat_row, number_column, user_id) values (:name, :address, :seat_row, :number_column, :user_id) ;");
     $statement->execute([
         ':name' => $name,
         ':address' => $address,
+        ':seat_row' => $seatRow,
+        ':number_column' => $numberColumn,
         ':user_id' => $userId,
     ]);
     return $statement->rowCount() > 0;

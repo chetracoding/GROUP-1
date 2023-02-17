@@ -30,8 +30,8 @@
                             <span class="font-semibold"><?= $show['name']; ?></span>
                         </div>
                         <div class="flex-1 flex flex-col">
-                            <span>Tickets: </span>
-                            <span class="font-semibold"><?= $show['number_tickets']; ?></span>
+                            <span>Duration: </span>
+                            <span class="font-semibold"><?= $show['duration']; ?></span>
                         </div>
                         <div class="flex-1 flex flex-col">
                             <span>Price: </span>

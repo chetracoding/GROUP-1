@@ -11,11 +11,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Variables
     $title = $_POST['title'];
     $description = $_POST['description'];
-    $duration = $_POST['duration'];
     $video_trailer = $_POST['video_trailer'];
     $action = $_POST['action'];
-    $number_ticket =$_POST['number_tickets'];
     $price = $_POST['price'];
+    $hour  = DateTime::createFromFormat('H:i', $_POST['duration']);  
+    $duration = $hour->format('h:i A');
 
     // get image from input
     $image = $_FILES['image']['name'];
@@ -31,9 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Check video_trailer
     empty($video_trailer)? $errors['video_trailer'] = "Please enter video_trailer." : "";
     
-    // Check action and number of ticket
+    // Check action 
     empty($action) || trim($action) == "" ? $errors['action'] = "Please enter action." : "";
-    empty($number_ticket) ? $errors['number_tickets'] = "Please enter number_ticke." : "";
 
     // Check price
     empty($price)? $errors['price'] = "Please select price." : "";
@@ -51,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         move_uploaded_file($image_tmp_name, $image_folder);
 
         // Insert a new show
-        createShows($title, $description, $image, $duration, $video_trailer, $action, $number_ticket, $price, $address, $types);
+        createShow($title, $description, $image, $duration, $video_trailer, $action, $price, $address, $types);
         header('Location: /seller');
     }
 
