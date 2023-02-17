@@ -23,7 +23,10 @@ $routes = [
     '/Drama' => 'controllers/filter/filter.controller.php',
     '/Concert' => 'controllers/filter/filter.controller.php',
     '/profile' =>'controllers/profile/profile.controller.php',
-    '/password' =>'controllers/password/password.controller.php'
+    '/password' =>'controllers/password/password.controller.php',
+    '/codesecurity' => 'controllers/recoverpassword/forgotpassword.code.controller.php',
+    '/forgotpassword' => 'controllers/recoverpassword/forgotpassword.controller.php',
+    '/recoverpassword' => 'controllers/recoverpassword/recoverpassword.controller.php'
 ];
 
 // Add seller pages

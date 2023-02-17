@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($errors)) {
         insertTicket($_POST['number-card'], $_POST['card-expiration'], $_GET['date_id'], $_SESSION['user-id']);
 
-        $ticketId = getTicketIdByUserId(7)['ticket_id'];
+        $ticketId = getTicketIdByUserId($_SESSION['user-id'])['ticket_id'];
         foreach ($_POST['seat'] as  $seat) {
             insertSeat($seat, $ticketId);
         }

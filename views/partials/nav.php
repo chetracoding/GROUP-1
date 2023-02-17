@@ -73,7 +73,7 @@
 
 <div class="justify-center aitem-center logout-dailog">
   <div class="dailog-card bg-white rounded-lg flex flex-col justify-center items-center">
-    <img src="assets/logout.png" width="60px"  class="m-5">
+    <img src="../../assets/logout.png" width="60px"  class="m-5">
     <div class="head">
       <p><b>Are you sure, do you want to logout?</b></p>
     </div>
