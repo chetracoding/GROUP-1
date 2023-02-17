@@ -2,12 +2,12 @@
 <?php require "views/partials/nav.php" ?>
 
 <div class="flex justify-center align-center my-8 flex">
-    <div class="w-2/5 md:space-y-8 sm:p-15 mx-14 mb- bg-gray-50 mb-2 p-8 my-20 shadow-lg">
+    <div class="w-2/5 md:space-y-8 sm:p-15 mx-14 mb- bg-white rounded-lg m-12 p-8 main-register">
         <form action="/recoverpassword" method="POST" class="space-y-4 md:space-y-6">
             <h1 class="text-xl font-bold leading-tight tracking-tight md:text-2xl text-center">
                New Password
             </h1>
-            <p>Please create a new password for your account</p>
+            <p class="text-center">Please create a new password for your account</p>
             <label for="password" class="block mb-2 text-sm font-medium text-gray-900">New Password</label>
             <div>
                 <input type="password" name="new-password" id="new-password" value="<?= isset($_POST['new-password'])? $_POST['new-password'] : ""?>" placeholder="••••••••••••" class="bg-gray-50 border border-green-400 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5 dark:focus:ring-green-500 dark:focus:border-green-300">
