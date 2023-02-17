@@ -14,7 +14,13 @@ $routes = [
     '/detail' => 'controllers/details/detail.controller.php',
     '/listtickets' => 'controllers/listtickets/listtickets.controller.php',
     '/printticket' =>'controllers/printticket/printticket.controller.php',
-    '/detail/buy' => 'controllers/details/buy.ticket.controller.php'
+    '/detail/buy' => 'controllers/details/buy.ticket.controller.php',
+    '/Cinema' => 'controllers/filter/filter.controller.php',
+    '/Comedy' => 'controllers/filter/filter.controller.php',
+    '/Musical' => 'controllers/filter/filter.controller.php',
+    '/Classical' => 'controllers/filter/filter.controller.php',
+    '/Drama' => 'controllers/filter/filter.controller.php',
+    '/Concert' => 'controllers/filter/filter.controller.php'
 ];
 
 // Add seller pages
