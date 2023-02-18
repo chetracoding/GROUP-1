@@ -3,7 +3,7 @@
     require 'views/partials/nav.seller.php'; 
     require 'views/partials/aside.seller.php'; 
 ?>
-<main class="ml-48 flex">
+<main class="ml-48 mt-14 flex">
     <div class="main-register h-2/4 w-2/5 bg-white flex m-6 sm:rounded-lg">
         <input id="show_duration" type="hidden" value="<?= $duration?>">
 
@@ -85,6 +85,5 @@
         </div>
     </div>
 </main>
-
-<script src="../../views/seller/js/seller.js"></script>
+<script src="../../views/seller/js/edittime.js"></script>
 <?php require 'views/partials/footer.seller.php'; ?>

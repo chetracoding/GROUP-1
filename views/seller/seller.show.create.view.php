@@ -3,7 +3,7 @@
     require 'views/partials/nav.seller.php'; 
     require 'views/partials/aside.seller.php'; 
 ?>
-<main class="ml-48 flex justify-center items-center">
+<main class="ml-48 mt-14 flex justify-center items-center">
     <div class="main-register bg-white sm:rounded-lg my-8 w-3/6">
         <div class="flex flex-col items-center justify-center px-8 py-8">
             <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">

@@ -1,6 +1,5 @@
 body {
-	background: rgb(211,209,248);
-	background: linear-gradient(90deg, rgba(211,209,248,1) 0%, rgba(158,158,255,1) 84%, rgba(248,248,248,1) 100%);
+	background: white;
 }
 
 #simple-search{
