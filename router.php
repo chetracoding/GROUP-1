@@ -34,14 +34,15 @@ if (isset($_SESSION['role'])) {
     if ($_SESSION['role'] == 'seller') {
         $routes['/seller'] = 'controllers/seller/seller.controller.php';
         $routes['/seller/venue'] = 'controllers/seller/seller.venue.controller.php';
-        $routes['/seller/venue/createVenue'] = 'controllers/seller/seller.venue.create.controller.php';
-        $routes['/seller/createShow'] = 'controllers/seller/seller.show.create.controller.php';
-        $routes['/seller/editShow'] = 'controllers/seller/seller.show.edit.controller.php';
-        $routes['/seller/editVenue'] = 'controllers/seller/seller.venue.edit.controller.php';
+        $routes['/seller/venue/create'] = 'controllers/seller/seller.venue.create.controller.php';
+        $routes['/seller/show/create'] = 'controllers/seller/seller.show.create.controller.php';
+        $routes['/seller/show/edit'] = 'controllers/seller/seller.show.edit.controller.php';
+        $routes['/seller/venue/edit'] = 'controllers/seller/seller.venue.edit.controller.php';
         $routes['/seller/show/delete'] = 'controllers/seller/seller.show.delete.controller.php';
         $routes['/seller/time'] = 'controllers/seller/seller.show.time.controller.php';
         $routes['/seller/time/edit'] = 'controllers/seller/seller.show.time.edit.controller.php';
         $routes['/seller/time/delete'] = 'controllers/seller/seller.show.time.delete.controller.php';
+        $routes['/seller/venue/delete'] = 'controllers/seller/seller.venue.delete.controller.php';
     }
 
 }

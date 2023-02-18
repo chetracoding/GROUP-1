@@ -8,7 +8,7 @@
     <div id="main" class="w-full main-content flex1 mt-12 md:mt-2 pb-24 md:pb-5">
         <div class="flex justify-between items-center w-full pl-6 pt-6 pr-6">
             <span class="text-slate-700 rounded-md text-lg font-medium">List of Shows</span>
-            <a class="text-center flex items-center text-white-600 rounded-full px-6 py-2 bg-blue-600" href="/seller/createShow">
+            <a class="text-center flex items-center text-white-600 rounded-full px-6 py-2 bg-blue-600" href="/seller/show/create">
                 <i class="fa-regular fa-video-plus fa-2x fa-inverse"></i>
             </a>
         </div>
@@ -46,7 +46,7 @@
                         </div>
                         <div>
                             <div class="p-3">
-                                <a href="/seller/editShow?id=<?= $show['show_id']; ?>">
+                                <a href="/seller/show/edit?id=<?= $show['show_id']; ?>">
                                     <i class="text-green-600  fa-solid fa-pen-to-square fa-2x fa-inverse"></i>
                                 </a>
                             </div>
@@ -69,7 +69,7 @@
 </section>
 
 <div class="delete-dailog justify-center items-center">
-    <div class="dailog-delete-show bg-gray-200 flex flex-col justify-center items-center">
+    <div class="dailog-delete-show bg-white rounded-lg flex flex-col justify-center items-center">
         <img src="assets/deleteshow.png" width="80px" class="mb-8">
         <div class="question">
             <p>Are you sure you want delete your show?</p>

@@ -77,7 +77,9 @@
                             <a href="/seller/time/edit?id=<?=$time['release_date_id']?>&show_id=<?=$time['show_id']?>" class="font-medium text-blue-600 hover:underline">Edit</a>
                         </td>
                         <td class="px-6 py-4 text-right">
-                            <a href="/seller/time/delete?id=<?=$time['release_date_id']?>&show_id=<?=$time['show_id']?>" class="font-medium text-red-600 hover:underline">Delete</a>
+                            <input type="hidden" value="<?= $time['show_id']; ?>">
+                            <a id="btn-delete-time" class="font-medium text-red-600 hover:underline cursor-pointer">Delete</a>
+                            <input type="hidden" value="<?= $time['release_date_id']; ?>">
                         </td>
                     </tr>
 
@@ -87,5 +89,19 @@
         </div>
     </div>
 </main>
-<script src="../../views/seller/js/edittime.js"></script>
+
+<div class="delete-dailog justify-center items-center">
+    <div class="rounded-lg dailog-delete-show bg-white flex flex-col justify-center items-center">
+        <img src="../../assets/deleteshow.png" width="80px" class="mb-8">
+        <div class="question">
+            <p>Are you sure you want delete your time?</p>
+        </div>    
+        <div class="delete-show-btns">
+            <button type="button" id="btn-cancel" class="bg-green-500 hover:bg-green-700 text-white py-2 px-5 rounded-full mt-9 m-4 shadow-lg">Cancel</button>
+            <button id="delete-btn"><a class="bg-red-600 hover:bg-red-700 text-white py-2 py-2 px-5 rounded-full mt-9 m-4 shadow-lg">Delete</a></button>
+        </div>  
+    </div>  
+</div> 
+
+<script src="../../views/seller/js/time.js"></script>
 <?php require 'views/partials/footer.seller.php'; ?>

@@ -36,13 +36,6 @@ function deleteShowId(int $id) : bool
     return $statement->rowCount() > 0;
 }
 
-function checkShowTicketsById(int $showId) : bool
-{
-    global $connection;
-    $statement = $connection->prepare("select * from show_tickets where show_id=:id;");
-    $statement->execute([ ':id' => $showId ]);
-    return $statement->rowCount() > 0;
-}
 function getStartEndtime(string $showId) : array
 {
     global $connection;
@@ -190,5 +183,12 @@ function updateTime(string $date, string $start_time, string $end_time, int $id)
         ':end_time' => $end_time,
         ':id' => $id,
     ]);
+    return $statement->rowCount() > 0;
+}
+function deleteVenueById(int $venueId) : bool
+{
+    global $connection;
+    $statement = $connection->prepare("delete from venues where venue_id=:id;");
+    $statement->execute([ ':id' => $venueId]);
     return $statement->rowCount() > 0;
 }
