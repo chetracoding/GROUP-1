@@ -3,6 +3,7 @@
 <body>
 
 <?php require "views/partials/banner.php" ?>
+<?php require "views/partials/filter.php" ?>
 
 <main >
 

@@ -4,11 +4,11 @@
     require 'views/partials/aside.seller.php'; 
 ?>
 
-<section class="w-full">
+<section class="w-full ">
     <div id="main" class="w-full main-content flex1 mt-12 md:mt-2 pb-24 md:pb-5">
         <div class="flex justify-between items-center w-full pl-6 pt-6 pr-6">
             <span class="text-slate-700 rounded-md text-lg font-medium">List of Venues</span>
-            <a class="text-center flex items-center text-white-600 rounded-full px-8 py-2 bg-blue-600" href="">
+            <a class="text-center flex items-center text-white-600 rounded-full px-8 py-2 bg-blue-600" href="/seller/venue/createVenue">
                 <i class="fa-sharp fa-solid fa-location-plus fa-2x fa-inverse"></i>
             </a>
         </div>
@@ -16,7 +16,7 @@
         <div class="w-full gap-4">
         <?php foreach($venues as $venue) :?>
             <div class="w-full px-6 py-3">
-                <div class="bg-gray-800 from-blue-200 to-blue-100 border-b-4 border-blue-600 shadow-xl p-5">
+                <div class=" sm:rounded-lg bg-gray-800 from-blue-200 to-blue-100 border-b-4 border-blue-600 shadow-xl p-5">
                     <div class="text-slate-400 flex flex-row items-center">
                         <div class="flex-shrink pr-4">
                             <div class="rounded-full p-5 bg-blue-600"><i class="fa-solid fa-camera-movie fa-2x fa-inverse"></i></div>
@@ -31,7 +31,7 @@
                         </div>
                         <div>
                             <div class="p-3">
-                                <a href="">
+                                <a href="/seller/editVenue?id=<?= $venue['venue_id']; ?>">
                                     <i class="text-green-600  fa-solid fa-pen-to-square fa-2x fa-inverse"></i>
                                 </a>
                             </div>

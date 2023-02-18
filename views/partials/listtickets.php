@@ -18,12 +18,12 @@
                 <span class="font-bold"><?= $ticket['date'] ?></span>
             </div>
             <div class="flex-1 flex flex-col">
-                <span>Tickets: </span>
-                <span class="font-bold"><?= $ticket['total_tickets'] ?></span>
+                <span>Seats: </span>
+                <span class="font-bold"><?= $ticket['total_seats'] ?></span>
             </div>
             <div class="flex-1 flex flex-col">
                 <span>Price: </span>
-                <span class="font-bold">$<?= $ticket['price'] * $ticket['total_tickets'] ?></span>
+                <span class="font-bold">$<?= $ticket['price'] * $ticket['total_seats'] ?></span>
             </div>
             <div>
                 <div class="p-3">
