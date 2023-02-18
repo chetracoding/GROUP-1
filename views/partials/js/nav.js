@@ -22,6 +22,10 @@ $("#sitting").on( "mouseover", function() {
     show(this);
 });
 
+$("body").on( "mouseout", function() {
+    hide($("#sitting")[0]);
+});
+
 $("#sitting").on( "mouseout", function() {
     hide(this);
 });

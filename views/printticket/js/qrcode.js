@@ -1,3 +1,4 @@
+// Generate QR Code
 generateBtn = document.querySelector(".qr-code .btn");
 qrImg = document.querySelector(".qr-code img");
 let preValue;
@@ -17,3 +18,24 @@ function openForm(){
 function closeForm(){
     document.getElementById("popup").style.display = "none"; 
 }
+
+// Print Ticket
+function autoClick(){
+$("#download").click();
+}
+
+$(document).ready(function(){
+var element = $("#htmlContent");
+
+$("#download").on('click', function(){
+
+    html2canvas(element, {
+    onrendered: function(canvas) {
+        var imageData = canvas.toDataURL("image/jpg");
+        var newData = imageData.replace(/^data:image\/jpg/, "data:application/octet-stream");
+        $("#download").attr("download", "cambo_ticket.jpg").attr("href", newData);
+    }
+    });
+
+});
+});

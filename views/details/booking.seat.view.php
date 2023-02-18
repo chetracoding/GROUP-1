@@ -26,11 +26,12 @@
 
 <form action="#" method="POST">
 
-<div class="flex items-center justify-center mx-11 my-10 bg-gray-800">
+<div class="flex flex-col items-center justify-center mx-11 my-10 bg-gray-800">
+  <div class="w-2/3 bg-white mt-10 p-4 text-center font-bold">SCREEN</div>
   <div class="flex flex-col p-10">
 
     <?php
-    $rowLetters = range('A', $seatRow);
+    $rowLetters = range($seatRow, "A");
     $booked = $seatBooked;
     foreach($rowLetters as $rowLetter) : ?>
     <!-- Create seats -->
