@@ -2,14 +2,14 @@
 
     <div class="bg-gray-800 from-blue-200 to-blue-100 border-b-4 border-white-600 shadow-xl p-5">
         <div class="text-slate-400 flex flex-row items-center">
-            <div class="flex-shrink flex flex-1 pr-2">
-                <img class="h-25 w-20"src=<?= $ticket['image'] ?> alt="">
+            <div class="flex-shrink flex pr-2">
+                <img class="h-25 w-20"src="assets/uploaded/<?= $ticket['image'] ?>" alt="">
             </div>
-            <div class="w-1/5 flex-2 flex flex-col">
+            <div class="ml-5 w-1/5 flex-2 flex flex-col">
                 <span>Title: </span>
                 <span class="font-bold"><?= $ticket['title'] ?></span>
             </div>
-            <div class="w-1/5 flex flex-col">
+            <div class="w-1/4 flex flex-col">
                 <span>Venue: </span>
                 <span class="font-bold"><?= $ticket['name'] ?></span>
             </div>
