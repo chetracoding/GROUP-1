@@ -11,10 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Variables
     $title = $_POST['title'];
     $description = $_POST['description'];
-    $duration = $_POST['duration'];
     $video_trailer = $_POST['video_trailer'];
     $action = $_POST['action'];
-    $number_ticket =$_POST['number_tickets'];
     $price = $_POST['price'];
 
     // get image from input
@@ -25,18 +23,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     empty($description) || trim($description) == "" ? $errors['description'] = "Please enter description." : "";
     
     // Check image and duration
-    empty($image )? $errors['image'] = "Please select image." : "";
-    empty($duration)? $errors['duration'] = "Please enter duration." : "";
+    empty($image )? $errors['image'] = "Please choose image." : "";
+    empty($_POST['duration'])? $errors['duration'] = "Please enter duration." : "";
     
     // Check video_trailer
     empty($video_trailer)? $errors['video_trailer'] = "Please enter video_trailer." : "";
     
-    // Check action and number of ticket
+    // Check action 
     empty($action) || trim($action) == "" ? $errors['action'] = "Please enter action." : "";
-    empty($number_ticket) ? $errors['number_tickets'] = "Please enter number_ticke." : "";
 
     // Check price
-    empty($price)? $errors['price'] = "Please select price." : "";
+    empty($price)  || $price < 0 ? $errors['price'] = "Please select price." : "";
 
     // Check address and types
     empty($_POST['address'])? $errors['address'] = "Please enter address." : "";
@@ -44,6 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     if (empty($errors)) {
         // Variables
+        $hour  = DateTime::createFromFormat('H:i', $_POST['duration']);  
+        $duration = $hour->format('h:i A');
         $address = (int)($_POST['address']);
         $types = (int)($_POST['types']);
         $image_tmp_name=$_FILES['image']['tmp_name'];
@@ -51,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         move_uploaded_file($image_tmp_name, $image_folder);
 
         // Insert a new show
-        createShows($title, $description, $image, $duration, $video_trailer, $action, $number_ticket, $price, $address, $types);
+        createShow($title, $description, $image, $duration, $video_trailer, $action, $price, $address, $types);
         header('Location: /seller');
     }
 

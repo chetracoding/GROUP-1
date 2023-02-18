@@ -4,7 +4,7 @@
     require 'views/partials/aside.seller.php'; 
 ?>
 
-<section class="w-full ">
+<section class="ml-48">
     <div id="main" class="w-full main-content flex1 mt-12 md:mt-2 pb-24 md:pb-5">
         <div class="flex justify-between items-center w-full pl-6 pt-6 pr-6">
             <span class="text-slate-700 rounded-md text-lg font-medium">List of Venues</span>
@@ -24,6 +24,14 @@
                         <div class="w-1/3 flex flex-col">
                             <span>Name: </span>
                             <span class="font-bold"><?= $venue['name']; ?></span>
+                        </div>
+                        <div class="w-1/6 flex flex-col">
+                            <span>Row: </span>
+                            <span class="font-bold"><?= $venue['seat_row']; ?></span>
+                        </div>
+                        <div class="w-1/6 flex flex-col">
+                            <span>Column: </span>
+                            <span class="font-bold"><?= $venue['number_column']; ?></span>
                         </div>
                         <div class="w-1/2 ml-2 flex flex-col">
                             <span>Address: </span>

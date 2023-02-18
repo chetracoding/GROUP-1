@@ -4,7 +4,7 @@
     require 'views/partials/aside.seller.php'; 
 ?>
 
-<section class="w-full">
+<section class="ml-48">
     <div id="main" class="w-full main-content flex1 mt-12 md:mt-2 pb-24 md:pb-5">
         <div class="flex justify-between items-center w-full pl-6 pt-6 pr-6">
             <span class="text-slate-700 rounded-md text-lg font-medium">List of Shows</span>
@@ -30,8 +30,8 @@
                             <span class="font-semibold"><?= $show['name']; ?></span>
                         </div>
                         <div class="flex-1 flex flex-col">
-                            <span>Tickets: </span>
-                            <span class="font-semibold"><?= $show['number_tickets']; ?></span>
+                            <span>Duration: </span>
+                            <span class="font-semibold"><?= $show['duration']; ?></span>
                         </div>
                         <div class="flex-1 flex flex-col">
                             <span>Price: </span>

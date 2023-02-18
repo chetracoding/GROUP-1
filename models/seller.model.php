@@ -74,10 +74,10 @@ function checkReleaseTimes(string $date, string $startTime, string $endTime, int
     ]);
     return $statement->rowCount() > 0;
 }
-function createShows(string $title, string $description, string $image, string $duration, string $video_trailer, string $action, int $number_ticket, string $price, int $address, int $types ) : bool
+function createShow(string $title, string $description, string $image, string $duration, string $video_trailer, string $action, string $price, int $address, int $types ) : bool
 {
     global $connection;
-    $statement = $connection->prepare("insert into shows (title, description, image, duration, video_trailer, action, number_tickets, price, venue_id, type_id) values (:title, :description, :image, :duration, :video_trailer,:action,:number_tickets, :price, :venue_id, :type_id);");
+    $statement = $connection->prepare("insert into shows (title, description, image, duration, video_trailer, action, price, venue_id, type_id) values (:title, :description, :image, :duration, :video_trailer,:action,:price, :venue_id, :type_id);");
     $statement->execute([
         ':title' => $title,
         ':description' => $description,
@@ -85,7 +85,6 @@ function createShows(string $title, string $description, string $image, string $
         ':duration' => $duration,
         ':video_trailer' => $video_trailer,
         ':action' => $action,
-        ':number_tickets' => $number_ticket,
         ':price' => $price,
         ':venue_id' => $address,
         ':type_id' => $types
@@ -105,13 +104,15 @@ function createTime(string $date, string $start_time, string $end_time, int $id)
     ]);
     return $statement->rowCount() > 0;
 }
-function createVenue(string $name, string $address, string $userId,) : bool
+function createVenue(string $name, string $address, string $seatRow, int $numberColumn, string $userId,) : bool
 {
     global $connection;
-    $statement = $connection->prepare("insert into venues (name, venue_address, user_id) values (:name, :address,:user_id) ;");
+    $statement = $connection->prepare("insert into venues (name, venue_address, seat_row, number_column, user_id) values (:name, :address, :seat_row, :number_column, :user_id) ;");
     $statement->execute([
         ':name' => $name,
         ':address' => $address,
+        ':seat_row' => $seatRow,
+        ':number_column' => $numberColumn,
         ':user_id' => $userId,
     ]);
     return $statement->rowCount() > 0;
@@ -134,33 +135,34 @@ function getVenue(string $showId) : array
     ]);
     return $statement->fetch();
 }
-function updateShow(string $showId, string $title, string $description, string $image, string $duration, string $video_trailer, string $action, int $number_ticket, string $price, int $address, int $types ) : bool
+function updateShow(string $showId, string $title, string $description, string $image, string $duration, string $videoTrailer, string $action, string $price, int $address, int $type) : bool
 {
     global $connection;
-    $statement = $connection->prepare("update shows set title = :title, description = :description , image =:image, duration=:duration, video_trailer=:video_trailer, action=:action, number_tickets =:number_tickets , price=:price ,venue_id = :venue_id, type_id =:type_id where show_id = :id;");
+    $statement = $connection->prepare("update shows set title = :title, description = :description , image =:image, duration=:duration, video_trailer=:video_trailer, action=:action, price=:price ,venue_id = :venue_id, type_id =:type_id where show_id = :id;");
     $statement->execute([
         ':id' => $showId,
         ':title' => $title,
         ':description' => $description,
         ':image' => $image,
         ':duration' => $duration,
-        ':video_trailer' => $video_trailer,
+        ':video_trailer' => $videoTrailer,
         ':action' => $action,
-        ':number_tickets' => $number_ticket,
         ':price' => $price,
         ':venue_id' => $address,
-        ':type_id' => $types
+        ':type_id' => $type
     ]);
     return $statement->rowCount() > 0;
 }
-function UpdateVenue(int $venueId,string $name, string $venue_address) : bool
+function UpdateVenue(int $venueId, string $name , string $address, string $seatRow, int $seatColumn) : bool
 {
     global $connection;
-    $statement = $connection->prepare("update venues set name = :name, venue_address = :venue_address where venue_id = :id;");
+    $statement = $connection->prepare("update venues set name = :name, venue_address = :venue_address, seat_row=:seat_row, number_column=:number_column where venue_id = :id;");
     $statement->execute([
         ':id' => $venueId,
         ':name' => $name,
-        ':venue_address' => $venue_address,
+        ':venue_address' => $address,
+        ':seat_row' => $seatRow,
+        ':number_column' => $seatColumn
     ]);
     return $statement->rowCount() > 0;
 }
