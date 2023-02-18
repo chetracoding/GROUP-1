@@ -2,10 +2,11 @@
 <?php
     if (isset($_GET['id'])) {
         $userId =  $_SESSION['user-id'];
-        $ticketTd = (int) $_GET['id'];
+        $ticketId = (int) $_GET['id'];
         
-        if (checkTticketById($userId, $ticketTd)) {
-            $ticket = getTicketById($ticketTd);
+        if (checkTticketById($userId, $ticketId)) {
+            $seats = getSeatTicketById($ticketId);
+            $ticket = getTicketById($ticketId);
         } else {
             require 'views/errors/404.php';
             die();
