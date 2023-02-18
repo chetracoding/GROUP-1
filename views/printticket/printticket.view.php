@@ -1,3 +1,5 @@
+
+
 <?php require "views/partials/head.php"?>
 <?php require "views/partials/nav.php" ?>
 <main class="my-32 flex justify-center text-white">
@@ -26,8 +28,10 @@
                         <span class="font-bold"><?= $ticket['start_time']?> - <?= $ticket['end_time']?></span>
                     </div>
                     <div class="hover:break-after-column">
-                        <span>Number of tickets:</span>
-                        <span class="font-bold"><?= $ticket['total_tickets']?></span>
+                        <span>Name of seat: </span>
+                        <?php foreach($seats as $seat):?>
+                            <span class="font-bold"><?=$seat['seat_name']." "?></span>
+                        <?php endforeach; ?>
                     </div>
                     <span>Customer Name: </span>
                     <span class="font-bold"><?= $ticket['first_name'] .' '. $ticket['last_name']?></span>
@@ -35,7 +39,7 @@
                 <div>
                     <div class="inline-grid grid-cols-1">
                         <span class="flex justify-end ">PUBLIC TICKET</span>
-                        <span class="flex justify-end font-bold text-4xl">$<?= $ticket['price'] * $ticket['total_tickets']?></span>
+                        <span class="flex justify-end font-bold text-4xl">$<?= $ticket['price'] * $ticket['total_seats']?></span>
                         <span class="flex justify-end ">ONE TICKET FOR ONE PERSON </span>
                     </div>
                 </div>
