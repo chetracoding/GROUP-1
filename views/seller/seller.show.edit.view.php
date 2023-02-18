@@ -3,11 +3,11 @@
     require 'views/partials/nav.seller.php'; 
     require 'views/partials/aside.seller.php'; 
 ?>
-<main class="main-register m-auto w-5/12">
-    <div class="bg-white w-full sm:rounded-lg mb-8">
-        <div class="w-full flex flex-col items-center justify-center px-8 py-8 shadow mt-10">
+<main class="ml-48 flex justify-center items-center">
+    <div class="main-register bg-white sm:rounded-lg my-8 w-3/6">
+        <div class="w-full flex flex-col items-center justify-center px-8 py-8 shadow">
             <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
-                Edit new show
+                Edit show
             </h1><br>
             <form class="w-full space-y-4" method="POST" enctype="multipart/form-data">
                 <div>
@@ -16,7 +16,6 @@
                     <span class="text-red-600"><?= isset($errors['title'])? $errors['title'] : ""; ?></span>              
                 </div>
                 <div>
-                    
                     <label for="description" class="block mb-2 text-sm font-medium text-gray-900 ">Your description</label>
                     <textarea id="description" name="description"  rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-green-400 focus:ring-blue-500 focus:border-blue-500 " ><?= $editShow['description']?></textarea>
                     <span class="text-red-600"><?= isset($errors['description'])? $errors['description'] : ""; ?></span>              
@@ -40,21 +39,14 @@
                     <span class="text-red-600"><?= isset($errors['video_trailer'])? $errors['video_trailer'] : ""; ?></span>              
                 </div>
 
-                <div class = "w-full flex space-x-4 justify-between">
-                    <div>
-                        <label for="action" class="block mb-2 text-sm font-medium text-gray-900 ">Action</label>
-                        <input type="text" name="action" id="action" value="<?= $editShow['action']?>" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5">
-                        <span class="text-red-600"><?= isset($errors['action'])? $errors['action'] : ""; ?></span>
-                    </div>
-                    <div>
-                        <label for="number_ticket" class="block mb-2 text-sm font-medium text-gray-900 ">Number of ticket</label>
-                        <input type="number" name="number_tickets" id="number_tickets" value="<?= $editShow['number_tickets']?>" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5">
-                        <span class="text-red-600"><?= isset($errors['number_tickets'])? $errors['number_tickets'] : ""; ?></span>
-                    </div>
+                <div>
+                    <label for="action" class="block mb-2 text-sm font-medium text-gray-900 ">Action</label>
+                    <input type="text" name="action" id="action" value="<?= $editShow['action']?>" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5">
+                    <span class="text-red-600"><?= isset($errors['action'])? $errors['action'] : ""; ?></span>
                 </div>
                 <div>
                     <label for="price" class="block mb-2 text-sm font-medium text-gray-900 ">Price</label>
-                    <input type="number" name="price" id="price" value="<?=$editShow['price']?>" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5"placeholder="price">
+                    <input type="number" step="0.01" name="price" id="price" value="<?=$editShow['price']?>" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5"placeholder="price">
                     <span class="text-red-600"><?= isset($errors['price'])? $errors['price'] : ""; ?></span>   
                 </div>
                 <div>

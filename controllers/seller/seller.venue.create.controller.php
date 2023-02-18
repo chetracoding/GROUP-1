@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     empty($name) || trim($name) == "" ? $errors['name'] = "Please enter name." : "";
     empty($address) || trim($address) == "" ? $errors['address'] = "Please enter address." : "";
     isset($_POST['row_letter']) ? "" : $errors['row_letter'] = "Please select row." ;
-    empty($numberColumn) ? $errors['number_column'] = "Please enter column numbers." : "";
+    empty($numberColumn) || $numberColumn < 0 ? $errors['number_column'] = "Please enter column numbers." : "";
 
     if (empty($errors)) {
         // Insert a new show

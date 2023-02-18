@@ -119,33 +119,34 @@ function getVenue(string $showId) : array
     ]);
     return $statement->fetch();
 }
-function updateShow(string $showId, string $title, string $description, string $image, string $duration, string $video_trailer, string $action, int $number_ticket, string $price, int $address, int $types ) : bool
+function updateShow(string $showId, string $title, string $description, string $image, string $duration, string $videoTrailer, string $action, string $price, int $address, int $type) : bool
 {
     global $connection;
-    $statement = $connection->prepare("update shows set title = :title, description = :description , image =:image, duration=:duration, video_trailer=:video_trailer, action=:action, number_tickets =:number_tickets , price=:price ,venue_id = :venue_id, type_id =:type_id where show_id = :id;");
+    $statement = $connection->prepare("update shows set title = :title, description = :description , image =:image, duration=:duration, video_trailer=:video_trailer, action=:action, price=:price ,venue_id = :venue_id, type_id =:type_id where show_id = :id;");
     $statement->execute([
         ':id' => $showId,
         ':title' => $title,
         ':description' => $description,
         ':image' => $image,
         ':duration' => $duration,
-        ':video_trailer' => $video_trailer,
+        ':video_trailer' => $videoTrailer,
         ':action' => $action,
-        ':number_tickets' => $number_ticket,
         ':price' => $price,
         ':venue_id' => $address,
-        ':type_id' => $types
+        ':type_id' => $type
     ]);
     return $statement->rowCount() > 0;
 }
-function UpdateVenue(int $venueId,string $name, string $venue_address) : bool
+function UpdateVenue(int $venueId, string $name , string $address, string $seatRow, int $seatColumn) : bool
 {
     global $connection;
-    $statement = $connection->prepare("update venues set name = :name, venue_address = :venue_address where venue_id = :id;");
+    $statement = $connection->prepare("update venues set name = :name, venue_address = :venue_address, seat_row=:seat_row, number_column=:number_column where venue_id = :id;");
     $statement->execute([
         ':id' => $venueId,
         ':name' => $name,
-        ':venue_address' => $venue_address,
+        ':venue_address' => $address,
+        ':seat_row' => $seatRow,
+        ':number_column' => $seatColumn
     ]);
     return $statement->rowCount() > 0;
 }

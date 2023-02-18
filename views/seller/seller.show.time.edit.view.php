@@ -3,11 +3,11 @@
     require 'views/partials/nav.seller.php'; 
     require 'views/partials/aside.seller.php'; 
 ?>
-<main class="main-register w-full flex">
-    <div class="bg-white flex flex-1 m-6 sm:rounded-lg">
+<main class="ml-48 flex">
+    <div class="main-register h-2/4 w-2/5 bg-white flex m-6 sm:rounded-lg">
         <input id="show_duration" type="hidden" value="<?= $duration?>">
 
-        <div class="w-full flex flex-col items-center justify-center px-8 py-8 shadow mt-10">
+        <div class="w-full flex flex-col items-center justify-center px-8 py-8">
             <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
                 Edit show times  
             </h1><br>
@@ -32,9 +32,9 @@
         </div>
     </div>
 
-    <div class="flex-2 m-6">
+    <div class="w-3/6 m-6">
                 
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <div class="main-register relative overflow-x-auto sm:rounded-lg">
             <table class="w-full text-sm text-left text-gray-500 ">
                 <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white">
                     Times of show

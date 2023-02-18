@@ -14,8 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $video_trailer = $_POST['video_trailer'];
     $action = $_POST['action'];
     $price = $_POST['price'];
-    $hour  = DateTime::createFromFormat('H:i', $_POST['duration']);  
-    $duration = $hour->format('h:i A');
 
     // get image from input
     $image = $_FILES['image']['name'];
@@ -25,8 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     empty($description) || trim($description) == "" ? $errors['description'] = "Please enter description." : "";
     
     // Check image and duration
-    empty($image )? $errors['image'] = "Please select image." : "";
-    empty($duration)? $errors['duration'] = "Please enter duration." : "";
+    empty($image )? $errors['image'] = "Please choose image." : "";
+    empty($_POST['duration'])? $errors['duration'] = "Please enter duration." : "";
     
     // Check video_trailer
     empty($video_trailer)? $errors['video_trailer'] = "Please enter video_trailer." : "";
@@ -35,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     empty($action) || trim($action) == "" ? $errors['action'] = "Please enter action." : "";
 
     // Check price
-    empty($price)? $errors['price'] = "Please select price." : "";
+    empty($price)  || $price < 0 ? $errors['price'] = "Please select price." : "";
 
     // Check address and types
     empty($_POST['address'])? $errors['address'] = "Please enter address." : "";
@@ -43,6 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     if (empty($errors)) {
         // Variables
+        $hour  = DateTime::createFromFormat('H:i', $_POST['duration']);  
+        $duration = $hour->format('h:i A');
         $address = (int)($_POST['address']);
         $types = (int)($_POST['types']);
         $image_tmp_name=$_FILES['image']['tmp_name'];

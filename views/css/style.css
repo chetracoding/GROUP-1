@@ -1,7 +1,7 @@
-/* body {
-	background: rgb(8,0,125);
-	background: linear-gradient(90deg, rgba(8,0,125,1) 0%, rgba(10,10,88,1) 15%, rgba(0,3,23,1) 100%);
-} */
+body {
+	background: rgb(211,209,248);
+	background: linear-gradient(90deg, rgba(211,209,248,1) 0%, rgba(158,158,255,1) 84%, rgba(248,248,248,1) 100%);
+}
 
 #simple-search{
     width: 350px;
