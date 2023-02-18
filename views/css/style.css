@@ -147,7 +147,6 @@ iframe{
     height:100% !important;
 }
 
-/* delete show  */
 .delete-dailog,
 #popup,
 .logout-dailog{
@@ -171,7 +170,7 @@ iframe{
     background-color: rgba(0, 0, 0, 0.75);
 }
 
-.dailog-card{
+.dailog-card {
 	height: 50vh;
 	width: 30%;
 	margin: auto;

@@ -3,7 +3,7 @@
 function getVenuesByUserId(string $id) : array
 {
     global $connection;
-    $statement = $connection->prepare("select * from venues where user_id=:id;");
+    $statement = $connection->prepare("select * from venues where user_id=:id order by venue_id desc;");
     $statement->execute([
         ':id' => $id,
     ]);
@@ -21,7 +21,7 @@ function getNameTypes() : array
 function getShowsByUserId(string $id) : array
 {
     global $connection;
-    $statement = $connection->prepare("select * from seller_shows where user_id=:id;");
+    $statement = $connection->prepare("select * from seller_shows where user_id=:id order by show_id desc;");
     $statement->execute([
         ':id' => $id,
     ]);
@@ -36,10 +36,10 @@ function deleteShowId(int $id) : bool
     return $statement->rowCount() > 0;
 }
 
-function getStartEndtime(string $showId) : array
+function getTimesByshowId(string $showId) : array
 {
     global $connection;
-    $statement = $connection->prepare("select * from release_dates where show_id=:id order by date ASC ;");
+    $statement = $connection->prepare("select * from release_dates where show_id=:id order by date desc;");
     $statement->execute([
         ':id' => $showId,
     ]);
@@ -58,7 +58,7 @@ function checkStartEndtime(int $showId) : array
 function checkReleaseTimes(string $date, string $startTime, string $endTime, int $venueId) : bool
 {
     global $connection;
-    $statement = $connection->prepare("select title, date, start_time, end_time from release_date_shows where (start_time between :start_time and :end_time or end_time between :start_time and :end_time) and date=:date and venue_id=:venue_id;");
+    $statement = $connection->prepare("select * from release_date_shows where ((start_time < :start_time and end_time > :start_time) or (start_time < :end_time and end_time > :end_time) or (start_time < :start_time and end_time < :start_time) or (start_time < :end_time and end_time < :end_time) or (start_time > :end_time and end_time > :end_time) or (start_time = :start_time)) and date=:date and venue_id=:venue_id;");
     $statement->execute([
         'date' => $date,
         'start_time' => $startTime,

@@ -17,7 +17,7 @@
         <?php foreach($shows as $show) :?>
             <div class="w-full px-6 py-3">
                 <div class="sm:rounded-lg bg-gray-800 from-blue-200 to-blue-100 border-b-4 border-blue-600 shadow-xl p-5">
-                    <div class="text-slate-400 flex flex-row items-center">
+                    <div class="text-slate-400 flex flex-row">
                         <div class="flex-shrink pr-4">
                             <img class=" rounded w-20 h-20"src="./assets/uploaded/<?php echo $show['image']; ?>" >
                         </div>

@@ -4,7 +4,7 @@ $errors = [];
 
 $getTime = getTimeById($_GET['id']);
 $checkVenues= checkStartEndtime($_GET['show_id']);
-$getDateStartEndTimes = getStartEndtime($_GET['show_id']);
+$times = getTimesByshowId($_GET['show_id']);
 $duration = getShowById($_GET['show_id'])['duration'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     $checkTimes = checkReleaseTimes($date,  $start_time, $end_time, $venueId);
 
-    ($checkTimes == true)? $errors['start_time'] = "Your time already created." : ""; 
+    ($checkTimes == true)? $errors['start_time'] = "This time already created in your venue." : ""; 
 
     if (! $checkTimes && empty($errors)) {
         updateTime($date, $start_time, $end_time, $_GET['id']);

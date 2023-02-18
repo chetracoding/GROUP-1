@@ -3,7 +3,7 @@ require 'models/seller.model.php';
 $errors = [];
 
 $checkVenues= checkStartEndtime($_GET['id']);
-$getDateStartEndTimes = getStartEndtime($_GET['id']);
+$times = getTimesByshowId($_GET['id']);
 $duration = getShowById($_GET['id'])['duration'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     $checkTimes = checkReleaseTimes($date,  $start_time, $end_time, $venueId);
 
-    ($checkTimes == true)? $errors['start_time'] = "Your time already created." : ""; 
+    ($checkTimes == true)? $errors['start_time'] = "This time already created in your venue." : ""; 
 
     if (! $checkTimes && empty($errors)) {
         createTime($date, $start_time, $end_time, $_GET['id']);

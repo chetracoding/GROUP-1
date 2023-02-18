@@ -17,7 +17,7 @@
         <?php foreach($venues as $venue) :?>
             <div class="w-full px-6 py-3">
                 <div class=" sm:rounded-lg bg-gray-800 from-blue-200 to-blue-100 border-b-4 border-blue-600 shadow-xl p-5">
-                    <div class="text-slate-400 flex flex-row items-center">
+                    <div class="text-slate-400 flex flex-row">
                         <div class="flex-shrink pr-4">
                             <div class="rounded-full p-5 bg-blue-600"><i class="fa-solid fa-camera-movie fa-2x fa-inverse"></i></div>
                         </div>
