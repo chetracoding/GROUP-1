@@ -58,7 +58,7 @@ function checkStartEndtime(int $showId) : array
 function checkReleaseTimes(string $date, string $startTime, string $endTime, int $venueId) : bool
 {
     global $connection;
-    $statement = $connection->prepare("select * from release_date_shows where ((start_time < :start_time and end_time > :start_time) or (start_time < :end_time and end_time > :end_time) or (start_time < :start_time and end_time < :start_time) or (start_time < :end_time and end_time < :end_time) or (start_time > :end_time and end_time > :end_time) or (start_time = :start_time)) and date=:date and venue_id=:venue_id;");
+    $statement = $connection->prepare("select title, date, start_time, end_time from release_date_shows where (start_time between :start_time and :end_time or end_time between :start_time and :end_time) and date=:date and venue_id=:venue_id;");
     $statement->execute([
         'date' => $date,
         'start_time' => $startTime,
