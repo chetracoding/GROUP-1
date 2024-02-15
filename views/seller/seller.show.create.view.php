@@ -28,7 +28,7 @@
                 </div>
                 <div>
                     <label for="duration" class="block mb-2 text-sm font-medium text-gray-900 ">Your duration</label>
-                    <input type="time" id="duration" name="duration" id="duration" value="<?= isset($_POST['duration'])? $_POST['duration'] : ""?>"  class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5" placeholder="Your duration">
+                    <input type="time" id="duration" name="duration" value="<?= isset($_POST['duration'])? $_POST['duration'] : ""?>"  class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm rounded-lg focus:ring-1.5 focus:ring-green-500 font-medium block w-full p-2.5" placeholder="Your duration">
                     <span class="text-red-600"><?= isset($errors['duration'])? $errors['duration'] : ""; ?></span>   
                 </div>
 

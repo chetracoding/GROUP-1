@@ -43,7 +43,7 @@
           <input type="checkbox" class="hidden field-seat" id="<?= $rowLetter . $col ?>" value="<?= $rowLetter . $col ?>" name="seat[]" >
 
           <label class="<?= ($numberColumn <= 20 ) ? "text-3xl": "text-2xl" ?>  text-white" for="<?= $rowLetter . $col ?>">
-            <i class="fa-solid fa-loveseat"></i>
+            <i class="fa-solid fa-couch"></i>
             
             <!-- Show letter of row seats -->
             <?php if ($col == $numberColumn) : ?>
@@ -69,10 +69,10 @@
       <h1 class="text-2xl font-bold text-black sm:pr-12"><?= $time['title'] ?></h1>
       <div class="text-xl h-3/4 text-black mt-5">
           <div class="flex gap-2">
-            <i class="mt-1 text-blue-600 fa-regular fa-house"></i>
+            <i class="ml-2 mt-1 text-blue-600 fa-solid fa-location-dot"></i>
             <p class="text-black sm:pr-12">Venue : <span id = "get-venue" class="font-bold text-black"><?= $time['name'] ?></span></p>
           </div>
-          <div class="ml-0.5 flex gap-2">
+          <div class="ml-2 flex gap-2">
             <i class="mt-1 text-blue-600 fa-regular fa-calendar"></i>
             <p class="text-black sm:pr-12">Date : <span class="font-bold text-black"><?= $time['date'] ?></span></p>
           </div>
@@ -134,15 +134,15 @@
     if (storeSeats.length < maximumSeat) {
       if (element.checked) {
         element.nextElementSibling.style.color = "#1F51FF";
-        element.nextElementSibling.firstElementChild.className = "fa-solid fa-person-seat-reclined";
+        element.nextElementSibling.firstElementChild.className = "fa-solid fa-couch";
       } else {
         element.nextElementSibling.style.color = "white";
-        element.nextElementSibling.firstElementChild.className = "fa-solid fa-loveseat";
+        element.nextElementSibling.firstElementChild.className = "fa-solid fa-couch";
       }
     } else {
       element.checked = false;
       element.nextElementSibling.style.color = "white";
-      element.nextElementSibling.firstElementChild.className = "fa-solid fa-loveseat";
+      element.nextElementSibling.firstElementChild.className = "fa-solid fa-couch";
       document.querySelector(".max-seat").style.display = "flex";
     }
 
@@ -181,7 +181,8 @@
         if (seat.value == b) {
           seat.disabled = true;
           seat.nextElementSibling.style.color = "#DC143C";
-          seat.nextElementSibling.firstElementChild.className = "fa-regular fa-circle-user";
+          seat.nextElementSibling.style.fontSize = "37px";
+          seat.nextElementSibling.firstElementChild.className = "fa-solid fa-ban";
         }
       }
 	  }

@@ -5,7 +5,6 @@ let preValue;
 function openForm(){
     document.getElementById("popup").style.display = "flex"; 
     let qrValue = window.location.href;
-    console.log(qrValue);
     if(!qrValue || preValue === qrValue) return;
     preValue = qrValue;
     generateBtn.innerText = "Generating QR Code...";

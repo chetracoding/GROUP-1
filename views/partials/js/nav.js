@@ -1,11 +1,13 @@
 // FUNCTIONS
 function show(element)
 {
+    if (!element) return;
     element.style.display = 'block';
 }
 
 function hide(element)
 {
+    if (!element) return;
     element.style.display = 'none';
 }
 
@@ -13,7 +15,6 @@ function showSitting () {
     const sitting = $('#sitting')[0];
     show(sitting);
 }
-
 
 // ADD EVENTS
 const logoutDailog = $('.logout-dailog')[0];

@@ -42,7 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($errors)) {
         // Variables
         $hour  = DateTime::createFromFormat('H:i', $_POST['duration']);  
-        $duration = $hour->format('h:i A');
+        $duration = $hour->format('h:i:s');
+        echo $duration;
         $address = (int)($_POST['address']);
         $types = (int)($_POST['types']);
         $image_tmp_name=$_FILES['image']['tmp_name'];

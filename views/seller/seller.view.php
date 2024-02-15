@@ -8,8 +8,8 @@
     <div id="main" class="w-full main-content flex1 mt-12 md:mt-2 pb-24 md:pb-5">
         <div class="flex justify-between items-center w-full pl-6 pt-6 pr-6">
             <span class="text-slate-700 rounded-md text-lg font-medium">List of Shows</span>
-            <a class="text-center flex items-center text-white-600 rounded-full px-6 py-2 bg-blue-600" href="/seller/show/create">
-                <i class="fa-regular fa-video-plus fa-2x fa-inverse"></i>
+            <a class="text-center flex items-center text-white rounded-full px-8 py-2 bg-blue-600" href="/seller/show/create">
+                <i class="fa-solid fa-square-plus fa-2x"></i>
             </a>
         </div>
 
@@ -40,7 +40,7 @@
                         <div>
                             <div class="p-3">
                                 <a href="/seller/time?id=<?= $show['show_id']; ?>">
-                                    <i class="text-blue-600  fa-solid fa-timer fa-2x fa-inverse"></i>
+                                    <i class="text-blue-600  fa-solid fa-clock fa-2x fa-inverse"></i>
                                 </a>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                         <div>
                             <div class="p-3">
                                 <button id="btn-delete-show" type="button">
-                                    <i class="text-red-600 fa-solid fa-trash-can-xmark fa-2x fa-inverse"></i>
+                                    <i class="text-red-600 fa-solid fa-trash fa-2x fa-inverse"></i>
                                     <input type="hidden" value="<?= $show['show_id']; ?>">
                                 </button>
                             </div>

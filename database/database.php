@@ -1,8 +1,9 @@
 <?php
+// !!!! please config this file before start the serve
 
 $hostname = "localhost";
-$database = "concert_db";
-$username = "root";
+$database = "db_example";
+$username = "username";
 $password = "";
 
 $dsn = "mysql:host=$hostname;dbname=$database;charset=utf8mb4";

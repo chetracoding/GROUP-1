@@ -8,8 +8,8 @@
     <div id="main" class="w-full main-content flex1 mt-12 md:mt-2 pb-24 md:pb-5">
         <div class="flex justify-between items-center w-full pl-6 pt-6 pr-6">
             <span class="text-slate-700 rounded-md text-lg font-medium">List of Venues</span>
-            <a class="text-center flex items-center text-white-600 rounded-full px-8 py-2 bg-blue-600" href="/seller/venue/create">
-                <i class="fa-sharp fa-solid fa-location-plus fa-2x fa-inverse"></i>
+            <a class="text-center flex items-center text-white rounded-full px-8 py-2 bg-blue-600" href="/seller/venue/create">
+                <i class="fa-solid fa-square-plus fa-2x"></i>
             </a>
         </div>
 
@@ -19,7 +19,7 @@
                 <div class=" sm:rounded-lg bg-gray-800 from-blue-200 to-blue-100 border-b-4 border-blue-600 shadow-xl p-5">
                     <div class="text-slate-400 flex flex-row">
                         <div class="flex-shrink pr-4">
-                            <div class="rounded-full p-5 bg-blue-600"><i class="fa-solid fa-camera-movie fa-2x fa-inverse"></i></div>
+                            <div class="rounded-full p-5"><i class="fa-solid fa-location-dot fa-2x fa-inverse"></i></div>
                         </div>
                         <div class="w-1/3 flex flex-col">
                             <span>Name: </span>
@@ -45,7 +45,7 @@
                             </div>
                             <div class="p-3">
                                 <a id="btn-delete-venue">
-                                    <i  class=" cursor-pointer text-red-600 fa-solid fa-trash-can-xmark fa-2x fa-inverse"></i>
+                                    <i  class=" cursor-pointer text-red-600 fa-solid fa-trash fa-2x fa-inverse"></i>
                                     <input type="hidden" id= venueId value="<?= $venue['venue_id']; ?>">
                                 </a>
                             </div>

@@ -4,7 +4,7 @@
     <div class="profile flex justify-center">
         <div class="detailperson px-10 bg-slate-900 rounded-lg">
             <div class="profile flex justify-center">
-                <i class=" text-white fa-duotone fa-circle-user text-7xl my-6"></i>
+                <i class=" text-white fa-regular fa-circle-user text-7xl my-6"></i>
             </div>
             <div class="flex flex-col items-center">
                 <span class="font-bold uppercase text-white"><?= $profile['first_name']?> <?= $profile['last_name']?></span>
