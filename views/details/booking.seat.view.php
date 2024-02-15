@@ -181,7 +181,6 @@
         if (seat.value == b) {
           seat.disabled = true;
           seat.nextElementSibling.style.color = "#DC143C";
-          seat.nextElementSibling.style.fontSize = "37px";
           seat.nextElementSibling.firstElementChild.className = "fa-solid fa-ban";
         }
       }
