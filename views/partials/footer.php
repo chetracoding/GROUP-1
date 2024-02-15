@@ -4,7 +4,7 @@
 >
   <div class="relative block h-32 lg:col-span-2 lg:h-full">
     <img
-      src="assets/footer.jpg"
+      src="../../assets/footer.jpg"
       class="absolute inset-0 object-cover w-full h-full"
     />
   </div>

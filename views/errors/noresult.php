@@ -8,10 +8,10 @@
         <div class="relative">
             <div class="absolute">
                 <div class="">
-                    <h1 class="text-white font-bold text-2xl">
+                    <h1 class="text-black font-bold text-2xl">
                     This reseach isn't found. Sorry about that.
                     </h1>
-                    <p class="my-2 text-white">Try searching for something else.</p>
+                    <p class="my-2 text-black">Try searching for something else.</p>
                 </div>
             </div>
         </div>
